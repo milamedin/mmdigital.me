@@ -29,6 +29,10 @@ export const site = {
   formEndpoint: 'https://script.google.com/macros/s/AKfycbzqn_QOLXC0r-st49Cy2MFPmtF2chJYATubIYuLLaXZqluohcWprTssGOm24AFkwZ6nhQ/exec',
   formNotifyEmail: 'milamedin@gmail.com',
 
+  // Google Analytics 4 — ostavi prazno da isključiš tracking
+  // Dobićeš novi ID na https://analytics.google.com (počinje sa G-)
+  googleAnalyticsId: 'G-J2Z17DBGXR',
+
   // Glavna navigacija
   nav: [
     { label: 'O nama', href: '/o-nama/' },

@@ -169,6 +169,16 @@ ${schema
       `<script type="application/ld+json">${JSON.stringify(s).replace(/</g, '\\u003c')}</script>`
   )
   .join('\n')}
+${site.googleAnalyticsId
+  ? `<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=${esc(site.googleAnalyticsId)}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${esc(site.googleAnalyticsId)}');
+</script>`
+  : ''}
 </head>
 <body class="${esc(bodyClass)}">
 ${headerHTML(path)}
