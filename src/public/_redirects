@@ -1,0 +1,9 @@
+# Cloudflare Pages / Netlify redirect-i
+# Format: from-path  to-path  status
+
+# Stari WordPress URL-ovi → novi (mapa nakon migracije s WP-a)
+# Primjer: /old-url/  /new-url/  301
+# Po potrebi dodaj svoje redirect-e ispod
+
+# Custom 404 fallback (CF Pages auto detektuje 404.html, ali eksplicitno za sigurnost)
+/*    /404.html   404

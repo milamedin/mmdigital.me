@@ -1,0 +1,876 @@
+{
+  "title": "LOGO DIZAJN — MM Digital",
+  "type": "page",
+  "version": "0.4",
+  "page_settings": {
+    "template": "elementor_canvas",
+    "background_background": "classic",
+    "background_color": "#0A0A0A"
+  },
+  "content": [
+    {
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "content_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#0A0A0A",
+        "padding": {
+          "unit": "px",
+          "top": 140,
+          "right": 30,
+          "bottom": 140,
+          "left": 30
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": 60,
+          "right": 20,
+          "bottom": 60,
+          "left": 20
+        },
+        "gap": {
+          "unit": "px",
+          "size": 40
+        }
+      },
+      "elements": [
+        {
+          "elType": "column",
+          "settings": {
+            "_column_size": 55,
+            "content_position": "middle"
+          },
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "LOGO DIZAJN",
+                "text_color": "#B8A9FF",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 13
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 3
+                },
+                "typography_text_transform": "uppercase",
+                "_animation": "fadeInUp",
+                "_animation_delay": 100
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 20
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Logo koji se pamti. Ne logo koji se <em>zaboravi.</em>",
+                "header_size": "h1",
+                "align": "left",
+                "title_color": "#FFFFFF",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_weight": "700",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 56
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 42
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 32
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.2
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 200
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 15
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Vaš logo je prvo što ljudi vide — i posljednje što pamte. Kreiramo logoe koji predstavljaju vašu priču, ne generičke simbole iz template-a.",
+                "align": "left",
+                "text_color": "#999999",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 18
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 25
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Zakaži konsultaciju →",
+                "link": {
+                  "url": "/kontakt",
+                  "is_external": false,
+                  "nofollow": false
+                },
+                "align": "left",
+                "size": "lg",
+                "button_text_color": "#0A0A0A",
+                "background_color": "#FFFFFF",
+                "button_text_color_hover": "#0A0A0A",
+                "button_background_color_hover": "#B8A9FF",
+                "border_radius": {
+                  "unit": "px",
+                  "top": 50,
+                  "right": 50,
+                  "bottom": 50,
+                  "left": 50
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 1
+                },
+                "text_padding": {
+                  "unit": "px",
+                  "top": 18,
+                  "right": 40,
+                  "bottom": 18,
+                  "left": 40
+                },
+                "_animation": "fadeInUp",
+                "_animation_delay": 400,
+                "_css_classes": "mm-btn-hover"
+              }
+            }
+          ]
+        },
+        {
+          "elType": "column",
+          "settings": {
+            "_column_size": 45,
+            "content_position": "middle"
+          },
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "image",
+              "settings": {
+                "image": {
+                  "url": "",
+                  "id": ""
+                },
+                "image_size": "full",
+                "caption": "hero-placeholder.jpg",
+                "border_radius": {
+                  "unit": "px",
+                  "top": 16,
+                  "right": 16,
+                  "bottom": 16,
+                  "left": 16
+                },
+                "_css_classes": "mm-img-hover",
+                "_animation": "fadeInRight",
+                "_animation_delay": 400
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "content_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#111111",
+        "padding": {
+          "unit": "px",
+          "top": 100,
+          "right": 30,
+          "bottom": 100,
+          "left": 30
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": 60,
+          "right": 20,
+          "bottom": 60,
+          "left": 20
+        },
+        "_css_classes": ""
+      },
+      "elements": [
+        {
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "REALNOST",
+                "text_color": "#B8A9FF",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 13
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 3
+                },
+                "typography_text_transform": "uppercase",
+                "_animation": "fadeInUp",
+                "_animation_delay": 100
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 20
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Problem s logom od <em>20€.</em>",
+                "header_size": "h2",
+                "align": "left",
+                "title_color": "#FFFFFF",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_weight": "700",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 42
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 32
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 26
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.2
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 200
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 20
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Na internetu možete kupiti logo za 20€. Ili za 5€ na Fiverr-u. Dobićete nešto. Ali to \"nešto\" koristi još 500 drugih firmi. Isti font, isti simbol, ista priča — koja nije vaša.",
+                "align": "left",
+                "text_color": "#999999",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 17
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 12
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Logo nije slika. Logo je obećanje. Kada neko vidi vaš logo, u djeliću sekunde donosi odluku: \"Da li ovo izgleda kao firma kojoj mogu vjerovati?\"",
+                "align": "left",
+                "text_color": "#999999",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 17
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 12
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Ako vaš logo izgleda kao da je napravljen za 5 minuta — ljudi pretpostavljaju da i vaš biznis radi tako.",
+                "align": "left",
+                "text_color": "#999999",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 17
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 12
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "content_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#0A0A0A",
+        "padding": {
+          "unit": "px",
+          "top": 100,
+          "right": 30,
+          "bottom": 100,
+          "left": 30
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": 60,
+          "right": 20,
+          "bottom": 60,
+          "left": 20
+        },
+        "_css_classes": ""
+      },
+      "elements": [
+        {
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "PROCES",
+                "text_color": "#B8A9FF",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 13
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 3
+                },
+                "typography_text_transform": "uppercase",
+                "_animation": "fadeInUp",
+                "_animation_delay": 100
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 20
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Kako kreiramo <em>logo</em>",
+                "header_size": "h2",
+                "align": "left",
+                "title_color": "#FFFFFF",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_weight": "700",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 42
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 32
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 26
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.2
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 200
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 20
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<div style='border-left: 2px solid #B8A9FF; padding-left: 24px; margin-bottom: 24px;'><p style='color: #FFFFFF; font-family: Playfair Display, serif; font-size: 20px; font-weight: 700; margin-bottom: 8px;'>Korak 1: Upitnik</p><p style='color: #999; font-size: 15px; line-height: 1.7;'>Popunjavate brend upitnik koji nam pomaže da razumijemo vaš biznis i viziju.</p></div>",
+                "align": "left",
+                "text_color": "#999999",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 17
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 12
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<div style='border-left: 2px solid #B8A9FF; padding-left: 24px; margin-bottom: 24px;'><p style='color: #FFFFFF; font-family: Playfair Display, serif; font-size: 20px; font-weight: 700; margin-bottom: 8px;'>Korak 2: Istraživanje</p><p style='color: #999; font-size: 15px; line-height: 1.7;'>Analiziramo konkurenciju, industriju i ciljnu grupu.</p></div>",
+                "align": "left",
+                "text_color": "#999999",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 17
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 12
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<div style='border-left: 2px solid #B8A9FF; padding-left: 24px; margin-bottom: 24px;'><p style='color: #FFFFFF; font-family: Playfair Display, serif; font-size: 20px; font-weight: 700; margin-bottom: 8px;'>Korak 3: Koncepti</p><p style='color: #999; font-size: 15px; line-height: 1.7;'>Kreiramo 3 različita koncepta. Vi birate pravac.</p></div>",
+                "align": "left",
+                "text_color": "#999999",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 17
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 12
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<div style='border-left: 2px solid #B8A9FF; padding-left: 24px; margin-bottom: 24px;'><p style='color: #FFFFFF; font-family: Playfair Display, serif; font-size: 20px; font-weight: 700; margin-bottom: 8px;'>Korak 4: Finalizacija</p><p style='color: #999; font-size: 15px; line-height: 1.7;'>Razvijamo odabrani koncept i pripremamo finalne fajlove — logo u 3 verzije, svi formati (PNG, SVG, PDF), brand guidelines, verzije za svijetlu i tamnu pozadinu.</p></div>",
+                "align": "left",
+                "text_color": "#999999",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 17
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 12
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "content_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#111111",
+        "padding": {
+          "unit": "px",
+          "top": 120,
+          "right": 30,
+          "bottom": 120,
+          "left": 30
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": 60,
+          "right": 20,
+          "bottom": 60,
+          "left": 20
+        },
+        "_css_classes": ""
+      },
+      "elements": [
+        {
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": [
+            {
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Spremni za logo koji vas <em>predstavlja?</em>",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#FFFFFF",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_weight": "700",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 42
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 32
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 26
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.2
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 200
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 15
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "",
+                "align": "center",
+                "text_color": "#999999",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "400",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 17
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.75
+                },
+                "_css_classes": "",
+                "_animation": "fadeInUp",
+                "_animation_delay": 300
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 30
+                }
+              }
+            },
+            {
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Zakaži besplatnu konsultaciju →",
+                "link": {
+                  "url": "/kontakt"
+                },
+                "align": "center",
+                "size": "lg",
+                "button_text_color": "#0A0A0A",
+                "background_color": "#B8A9FF",
+                "button_text_color_hover": "#0A0A0A",
+                "button_background_color_hover": "#FFFFFF",
+                "border_radius": {
+                  "unit": "px",
+                  "top": 50,
+                  "right": 50,
+                  "bottom": 50,
+                  "left": 50
+                },
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_weight": "600",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 15
+                },
+                "text_padding": {
+                  "unit": "px",
+                  "top": 18,
+                  "right": 40,
+                  "bottom": 18,
+                  "left": 40
+                },
+                "_animation": "fadeInUp"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
