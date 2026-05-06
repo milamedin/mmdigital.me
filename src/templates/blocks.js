@@ -67,8 +67,15 @@ export const hero = ({ label, title, subtitle, cta, meta, image, imageAlt, visua
         </div>
         <div class="hero-visual ${image ? 'hero-visual--image' : ''} reveal" ${imageAlt ? `role="img" aria-label="${esc(imageAlt)}"` : 'aria-hidden="true"'}>
           ${image
-            ? `<img src="/images/${esc(image)}" alt="${esc(imageAlt || '')}" loading="eager" decoding="async" width="900" height="1100">
-               <div class="hero-visual-overlay" aria-hidden="true"></div>`
+            ? (() => {
+                const isJpg = /\.jpe?g$/i.test(image);
+                const avif = isJpg ? image.replace(/\.jpe?g$/i, '.avif') : null;
+                return `<picture>
+              ${avif ? `<source srcset="/images/${esc(avif)}" type="image/avif">` : ''}
+              <img src="/images/${esc(image)}" alt="${esc(imageAlt || '')}" loading="eager" fetchpriority="high" decoding="async" width="900" height="1100">
+            </picture>
+            <div class="hero-visual-overlay" aria-hidden="true"></div>`;
+              })()
             : `<div class="hero-visual-mark" aria-hidden="true">${esc(visualText || 'mm.')}</div>`}
         </div>
       </div>
@@ -406,7 +413,14 @@ export const founder = ({ label, name, role, image, imageAlt, paragraphs = [], l
     <div class="container">
       <div class="founder reveal">
         <div class="founder-photo">
-          <img src="/images/${esc(image)}" alt="${esc(imageAlt || name)}" loading="lazy" decoding="async" width="800" height="1000">
+          ${(() => {
+            const isJpg = /\.jpe?g$/i.test(image);
+            const avif = isJpg ? image.replace(/\.jpe?g$/i, '.avif') : null;
+            return `<picture>
+            ${avif ? `<source srcset="/images/${esc(avif)}" type="image/avif">` : ''}
+            <img src="/images/${esc(image)}" alt="${esc(imageAlt || name)}" loading="lazy" decoding="async" width="800" height="1000">
+          </picture>`;
+          })()}
         </div>
         <div class="founder-bio">
           ${label ? `<span class="label">${inline(label)}</span>` : ''}

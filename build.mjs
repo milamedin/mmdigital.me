@@ -164,6 +164,17 @@ async function build() {
         </section>`;
       }
     }
+    // Auto-detect LCP image (first hero block) za preload
+    let preloadImage = null;
+    if (isArticle(page) && page.hero?.image) {
+      preloadImage = `/images/${page.hero.image.replace(/\.jpe?g$/i, '.avif')}`;
+    } else if (Array.isArray(page.blocks)) {
+      const heroBlock = page.blocks.find((b) => b.type === 'hero' && b.image);
+      if (heroBlock) {
+        preloadImage = `/images/${heroBlock.image.replace(/\.jpe?g$/i, '.avif')}`;
+      }
+    }
+
     const html = renderPage({
       path: page.path,
       title: page.title,
@@ -171,6 +182,7 @@ async function build() {
       ogImage: page.ogImage,
       schema: enrichSchema(page),
       body,
+      preloadImage,
     });
     const outDir = page.path === '/' ? DIST : path.join(DIST, page.path);
     await ensure(outDir);

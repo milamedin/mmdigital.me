@@ -95,10 +95,17 @@ export function renderArticleHero({ label, title, subtitle, image, imageAlt, dat
           </div>
         </div>
         ${image
-          ? `<div class="article-hero-image reveal">
-              <img src="/images/${esc(image)}" alt="${esc(imageAlt || '')}" loading="eager" decoding="async" width="900" height="600">
+          ? (() => {
+              const isJpg = /\.jpe?g$/i.test(image);
+              const avif = isJpg ? image.replace(/\.jpe?g$/i, '.avif') : null;
+              return `<div class="article-hero-image reveal">
+              <picture>
+                ${avif ? `<source srcset="/images/${esc(avif)}" type="image/avif">` : ''}
+                <img src="/images/${esc(image)}" alt="${esc(imageAlt || '')}" loading="eager" fetchpriority="high" decoding="async" width="900" height="600">
+              </picture>
               <div class="hero-visual-overlay" aria-hidden="true"></div>
-            </div>`
+            </div>`;
+            })()
           : ''}
       </div>
     </div>
@@ -110,7 +117,17 @@ export function renderArticleCard(post) {
   return `
     <a href="${esc(post.path)}" class="article-card reveal">
       <div class="article-card-image">
-        ${post.hero?.image ? `<img src="/images/${esc(post.hero.image)}" alt="${esc(post.hero.imageAlt || post.title)}" loading="lazy" decoding="async" width="600" height="400">` : ''}
+        ${post.hero?.image
+          ? (() => {
+              const img = post.hero.image;
+              const isJpg = /\.jpe?g$/i.test(img);
+              const avif = isJpg ? img.replace(/\.jpe?g$/i, '.avif') : null;
+              return `<picture>
+            ${avif ? `<source srcset="/images/${esc(avif)}" type="image/avif">` : ''}
+            <img src="/images/${esc(img)}" alt="${esc(post.hero.imageAlt || post.title)}" loading="lazy" decoding="async" width="600" height="400">
+          </picture>`;
+            })()
+          : ''}
       </div>
       <div class="article-card-body">
         ${post.category ? `<span class="article-card-cat">${esc(post.category)}</span>` : ''}

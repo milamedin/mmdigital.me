@@ -124,6 +124,7 @@ export function renderPage(opts) {
     schema = [],
     ogImage = '/images/og-default.svg',
     bodyClass = '',
+    preloadImage = null,
   } = opts;
 
   const canonHref = canonical || `${site.url}${path}`;
@@ -155,14 +156,22 @@ export function renderPage(opts) {
 <meta name="twitter:description" content="${esc(description)}">
 <meta name="twitter:image" content="${esc(ogImageAbs)}">
 
-<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-<link rel="apple-touch-icon" href="/images/favicon.svg">
+<link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/icons/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/icons/favicon-96.png" sizes="96x96" type="image/png">
+<link rel="icon" href="/icons/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/main.css">
+${preloadImage ? `<link rel="preload" as="image" href="${esc(preloadImage)}" type="image/avif" fetchpriority="high">` : ''}
 ${schema
   .map(
     (s) =>
