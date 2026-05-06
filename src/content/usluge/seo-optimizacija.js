@@ -104,6 +104,7 @@ export default {
 
     {
       type: 'pricing',
+      theme: 'light',
       label: 'Cijene',
       title: 'Koliko košta *SEO optimizacija*?',
       columns: ['Usluga', 'Cijena', 'Šta je uključeno'],
@@ -118,6 +119,7 @@ export default {
 
     {
       type: 'pricing',
+      theme: 'light',
       label: 'Očekivanja',
       title: 'Kada ću *vidjeti rezultate*?',
       columns: ['Vrijeme', 'Šta se dešava'],

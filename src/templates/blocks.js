@@ -85,8 +85,8 @@ export const hero = ({ label, title, subtitle, cta, meta, image, imageAlt, visua
 
 // ─── Tekstualna sekcija ───
 // data: { label?, title?, paragraphs: [str], list?: [str], alt?: bool }
-export const text = ({ label, title, paragraphs = [], list, alt = false, align = 'center' }) => `
-  <section class="section ${alt ? 'section--alt' : ''}">
+export const text = ({ label, title, paragraphs = [], list, alt = false, theme = 'dark', align = 'center' }) => `
+  <section class="section ${theme === 'light' ? 'section--light' : alt ? 'section--alt' : ''}">
     <div class="container">
       <div class="prose ${align === 'left' ? 'prose--left' : ''} reveal">
         ${label ? `<span class="label">${inline(label)}</span>` : ''}
@@ -100,8 +100,8 @@ export const text = ({ label, title, paragraphs = [], list, alt = false, align =
 
 // ─── Cards grid ───
 // data: { label?, title?, intro?, cards: [{title, text, href?, icon?}], cols?: 2|3|4, alt? }
-export const cards = ({ label, title, intro, cards: items = [], cols = 3, alt = false }) => `
-  <section class="section ${alt ? 'section--alt' : ''}">
+export const cards = ({ label, title, intro, cards: items = [], cols = 3, alt = false, theme = 'dark' }) => `
+  <section class="section ${theme === 'light' ? 'section--light' : alt ? 'section--alt' : ''}">
     <div class="container">
       ${title || intro
         ? `<div class="section-head reveal">
@@ -129,8 +129,8 @@ export const cards = ({ label, title, intro, cards: items = [], cols = 3, alt = 
 
 // ─── Values (2-col blokovi s naslovom + tekstom) ───
 // data: { label?, title?, intro?, items: [{title, text}], alt? }
-export const values = ({ label, title, intro, items = [], alt = false }) => `
-  <section class="section ${alt ? 'section--alt' : ''}">
+export const values = ({ label, title, intro, items = [], alt = false, theme = 'dark' }) => `
+  <section class="section ${theme === 'light' ? 'section--light' : alt ? 'section--alt' : ''}">
     <div class="container">
       ${title || intro
         ? `<div class="section-head reveal">
@@ -156,10 +156,10 @@ export const values = ({ label, title, intro, items = [], alt = false }) => `
 
 // ─── Steps (numbered process) ───
 // data: { label?, title?, intro?, steps: [{title, text}], alt? }
-export const steps = ({ label, title, intro, steps: items = [], alt = false }) => {
+export const steps = ({ label, title, intro, steps: items = [], alt = false, theme = 'dark' }) => {
   const cols = items.length === 4 ? 'steps--4' : items.length === 5 ? 'steps--5' : '';
   return `
-  <section class="section ${alt ? 'section--alt' : ''}">
+  <section class="section ${theme === 'light' ? 'section--light' : alt ? 'section--alt' : ''}">
     <div class="container">
       ${title || intro
         ? `<div class="section-head reveal">
@@ -185,8 +185,8 @@ export const steps = ({ label, title, intro, steps: items = [], alt = false }) =
 
 // ─── Pricing / tabela ───
 // data: { label?, title?, intro?, columns: [str], rows: [[cell, cell, cell]], note?, alt? }
-export const pricing = ({ label, title, intro, columns = [], rows = [], note, alt = false }) => `
-  <section class="section ${alt ? 'section--alt' : ''}">
+export const pricing = ({ label, title, intro, columns = [], rows = [], note, alt = false, theme = 'dark' }) => `
+  <section class="section ${theme === 'light' ? 'section--light' : alt ? 'section--alt' : ''}">
     <div class="container">
       ${title || intro
         ? `<div class="section-head reveal">
@@ -346,7 +346,7 @@ export const contact = ({ contact: c, endpoint = '' }) => {
 //   logos       — niz fajl-naziva u /images/portfolio/ (auto-popunjeno ako je `auto: true`)
 //   split       — true = dvije trake, donja u suprotnom smjeru
 //   speed       — sekundi za jednu rotaciju (default 80)
-export const clients = ({ label, title, intro, logos = [], split = true, speed = 80, alt = false }) => {
+export const clients = ({ label, title, intro, logos = [], split = true, speed = 80, alt = false, theme = 'dark' }) => {
   if (!logos.length) return '';
   const renderLogo = (l) =>
     `<div class="client-logo"><img src="/images/portfolio/${encodeURIComponent(l)}" alt="" loading="lazy" decoding="async" width="200" height="120"></div>`;
@@ -362,7 +362,7 @@ export const clients = ({ label, title, intro, logos = [], split = true, speed =
   };
 
   return `
-    <section class="section clients-section ${alt ? 'section--alt' : ''}">
+    <section class="section clients-section ${theme === 'light' ? 'section--light' : alt ? 'section--alt' : ''}">
       <div class="container">
         ${title || intro
           ? `<div class="section-head reveal">
@@ -379,10 +379,10 @@ export const clients = ({ label, title, intro, logos = [], split = true, speed =
 };
 
 // ─── Klijenti grid (full lista) ───
-export const clientsGrid = ({ label, title, intro, logos = [], alt = false }) => {
+export const clientsGrid = ({ label, title, intro, logos = [], alt = false, theme = 'dark' }) => {
   if (!logos.length) return '';
   return `
-    <section class="section ${alt ? 'section--alt' : ''}">
+    <section class="section ${theme === 'light' ? 'section--light' : alt ? 'section--alt' : ''}">
       <div class="container">
         ${title || intro
           ? `<div class="section-head reveal">
@@ -408,8 +408,8 @@ export const clientsGrid = ({ label, title, intro, logos = [], alt = false }) =>
 
 // ─── Founder / Person bio block ───
 // data: { label?, name, role, image, imageAlt, paragraphs: [str], links?: [{label, href, external?}] }
-export const founder = ({ label, name, role, image, imageAlt, paragraphs = [], links = [], alt = false }) => `
-  <section class="section ${alt ? 'section--alt' : ''}">
+export const founder = ({ label, name, role, image, imageAlt, paragraphs = [], links = [], alt = false, theme = 'dark' }) => `
+  <section class="section ${theme === 'light' ? 'section--light' : alt ? 'section--alt' : ''}">
     <div class="container">
       <div class="founder reveal">
         <div class="founder-photo">

@@ -64,6 +64,7 @@ export default {
 
     {
       type: 'pricing',
+      theme: 'light',
       label: 'Modeli',
       title: 'Kako *funkcionišu* konsultacije',
       columns: ['Model', 'Šta je', 'Za koga'],

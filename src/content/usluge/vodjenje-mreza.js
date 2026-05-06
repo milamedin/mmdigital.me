@@ -64,6 +64,7 @@ export default {
 
     {
       type: 'pricing',
+      theme: 'light',
       label: 'Paketi',
       title: 'Odaberite paket koji vam *odgovara*',
       columns: ['', 'Starter', 'Growth', 'Premium'],

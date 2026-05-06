@@ -91,6 +91,7 @@ export default {
 
     {
       type: 'values',
+      theme: 'light',
       label: 'Vrijednosti',
       title: 'Tri stvari u koje *vjerujemo*.',
       items: [

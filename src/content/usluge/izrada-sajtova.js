@@ -104,6 +104,7 @@ export default {
 
     {
       type: 'pricing',
+      theme: 'light',
       label: 'Cijene',
       title: 'Koliko košta *web sajt*?',
       columns: ['Tip sajta', 'Cijena', 'Šta je uključeno'],

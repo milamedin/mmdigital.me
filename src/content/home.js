@@ -182,6 +182,7 @@ export default {
 
     {
       type: 'values',
+      theme: 'light',
       label: 'Zašto MM Digital',
       title: 'Zašto baš *MM Digital*?',
       items: [
