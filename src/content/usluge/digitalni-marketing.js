@@ -73,7 +73,7 @@ export default {
         },
         {
           icon: '⌖',
-          title: 'Analytics i reporting',
+          title: 'Analitika i izvještavanje',
           text: 'Svake sedmice znate tačno šta smo uradili, koliko je koštalo i kakve rezultate donosi. Brojevi, ne priče.',
         },
         {

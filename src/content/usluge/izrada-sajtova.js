@@ -36,7 +36,7 @@ export default {
           name: 'Koliko traje izrada sajta?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Standardni poslovni sajt traje 4 sedmice, od početnog razgovora do launcha. Veći projekti i e-commerce mogu trajati 6-10 sedmica.',
+            text: 'Standardni poslovni sajt traje 4 sedmice, od početnog razgovora do objavljivanja. Veći projekti i e-commerce mogu trajati 6-10 sedmica.',
           },
         },
         {
@@ -126,7 +126,7 @@ export default {
         { title: 'Struktura i sadržaj', text: 'Sedmica 1. Planiramo strukturu, pišemo tekstove, biramo vizuale.' },
         { title: 'Dizajn', text: 'Sedmica 2. Vizuelni dizajn. Pokazujemo vam i tražimo feedback.' },
         { title: 'Razvoj', text: 'Sedmica 3. Kodiramo. Responsive, brz, optimizovan. Testiramo na svim uređajima.' },
-        { title: 'Launch', text: 'Sedmica 4. Sajt je live. Google Analytics, Search Console, sitemap, sve konfigurisano.' },
+        { title: 'Objavljivanje', text: 'Sedmica 4. Sajt je u prodaji. Google Analytics, Search Console, sitemap, sve konfigurisano.' },
       ],
       alt: true,
     },
@@ -139,9 +139,9 @@ export default {
         'Kada birate nekoga za izradu sajta, pitajte tri stvari:',
       ],
       list: [
-        '**"Možete li mi pokazati sajt koji ste napravili, i koliko trafika ima?"** Ako ne mogu, bježite.',
+        '**"Možete li mi pokazati sajt koji ste napravili, i koliko posjetilaca ima?"** Ako ne mogu, bježite.',
         '**"Da li je sajt optimizovan za Google?"** Ako kažu "to je dodatna usluga", bježite.',
-        '**"Šta se dešava nakon launcha?"** Ako kažu "ništa, sajt je gotov", bježite.',
+        '**"Šta se dešava nakon što sajt bude objavljen?"** Ako kažu "ništa, sajt je gotov", bježite.',
       ],
     },
 

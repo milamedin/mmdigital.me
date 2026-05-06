@@ -67,7 +67,7 @@ export default {
       cols: 2,
       cards: [
         { icon: '◧', title: 'Izrada sajtova', text: 'Brzi, mobilni, SEO-optimizovani sajtovi koji konvertuju.', href: '/usluge/izrada-sajtova/' },
-        { icon: '⌖', title: 'SEO optimizacija', text: 'Da vas Google nađe prije konkurencije. Organski trafik koji raste.', href: '/usluge/seo-optimizacija/' },
+        { icon: '⌖', title: 'SEO optimizacija', text: 'Da vas Google nađe prije konkurencije. Organske posjete koje rastu.', href: '/usluge/seo-optimizacija/' },
         { icon: 'G', title: 'Google oglašavanje', text: 'Google Ads kampanje. Ljudi koji aktivno traže baš vas.', href: '/usluge/google-oglasavanje/' },
       ],
     },

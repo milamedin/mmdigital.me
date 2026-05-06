@@ -151,7 +151,7 @@ export default {
         {
           icon: '⌖',
           title: 'SEO optimizacija',
-          text: 'Da vas Google nađe prije konkurencije. Organski trafik koji ne košta po kliku, i koji raste svaki mjesec.',
+          text: 'Da vas Google nađe prije konkurencije. Organske posjete koje ne koštaju po kliku, i koje rastu svaki mjesec.',
           href: '/usluge/seo-optimizacija/',
         },
         {

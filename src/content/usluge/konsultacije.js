@@ -51,7 +51,7 @@ export default {
       cols: 4,
       cards: [
         { icon: '◆', title: 'Digitalna strategija', text: 'Kompletna analiza i preporuke za vaš online marketing.' },
-        { icon: '#', title: 'Social media', text: 'Audit profila, content strategija, algoritam, growth taktike.' },
+        { icon: '#', title: 'Social media', text: 'Audit profila, content strategija, algoritam, taktike rasta.' },
         { icon: '◈', title: 'Paid advertising', text: 'Meta Ads, Google Ads, audit kampanja, optimizacija, skaliranje.' },
         { icon: '⌖', title: 'SEO', text: 'Tehnički audit, keyword strategija, content plan, link building.' },
         { icon: '✦', title: 'Branding', text: 'Pozicioniranje, vizuelni identitet, ton komunikacije.' },
@@ -71,7 +71,7 @@ export default {
       rows: [
         ['Jednokratna sesija', '60-90 min, fokus na jedan problem', 'Kad vam treba brz odgovor ili drugo mišljenje'],
         ['Mjesečni retainer', '2-4 sesije mjesečno + email podrška', 'Kad vam treba stalni savjetnik za tim'],
-        ['Projektni engagement', 'Definisan scope, rok i deliverable', 'Konkretan projekat (launch, rebrand, kampanja)'],
+        ['Projektni angažman', 'Definisan obim, rok i isporuke', 'Konkretan projekat (objava, rebrand, kampanja)'],
         ['Workshop za tim', 'Pola dana ili cijeli dan, hands-on', 'Kad želite da unaprijedite znanje tima'],
       ],
     },

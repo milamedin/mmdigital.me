@@ -55,7 +55,7 @@ export default {
         { icon: '◇', title: 'Dizajn i vizuali', text: 'Svaki post je dizajniran da izgleda profesionalno i konzistentno s vašim brendom. Ne Canva template-i, nego custom dizajn.' },
         { icon: '✦', title: 'Copywriting', text: 'Tekstovi koji angažuju. Hook koji zaustavlja scroll, priča koja drži pažnju, CTA koji pokreće akciju.' },
         { icon: '✉', title: 'Community management', text: 'Odgovaramo na komentare, DM-ove, mentions. Svaki neodgovoreni komentar je izgubljeni klijent. Mi ne propuštamo nijedan.' },
-        { icon: '#', title: 'Hashtag strategija', text: 'Ne random hashtagovi, nego istraživani, relevantni, optimizovani za reach i engagement.' },
+        { icon: '#', title: 'Hashtag strategija', text: 'Ne nasumični hashtagovi, nego istraživani, relevantni, optimizovani za doseg i angažovanost.' },
         { icon: '▶', title: 'Reels i video', text: 'Kratki video formati koji algoritam favorizuje. Planiramo, snimamo ili editujemo, zavisno od paketa.' },
         { icon: '⌖', title: 'Mjesečni izvještaj', text: 'Na kraju svakog mjeseca dobijate izvještaj: šta smo uradili, šta je radilo, šta ćemo promijeniti.' },
       ],

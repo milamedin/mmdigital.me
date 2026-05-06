@@ -77,7 +77,7 @@ Rezultati poslije 3 mjeseca: rezervacije skočile 60%. Ne zato što su radili "v
 
 Digitalni marketing ima nekoliko glavnih kanala. Svaki ima svoju ulogu. Niko od njih sam za sebe nije *cijelo rješenje*, ali u kombinaciji rade.
 
-**Google pretraga (SEO)**, Vaš sajt se pojavljuje kad neko traži ono što vi nudite. Spori, ali stalan trafik. Najjeftiniji dugoročno. Više o tome u tekstu [šta je SEO optimizacija](/blog/sta-je-seo-optimizacija/).
+**Google pretraga (SEO)**, Vaš sajt se pojavljuje kad neko traži ono što vi nudite. Spore, ali stalne posjete. Najjeftiniji dugoročno. Više o tome u tekstu [šta je SEO optimizacija](/blog/sta-je-seo-optimizacija/).
 
 **Google Ads**, Plaćeni oglasi koji se pojavljuju iznad SEO rezultata. Brži od SEO-a, ali platite za svaki klik. Dobar za testiranje šta radi prije nego što uložite u SEO.
 

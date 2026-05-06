@@ -4,7 +4,7 @@ export default {
   path: '/usluge/seo-optimizacija/',
   title: 'SEO Optimizacija Crna Gora | Optimizacija Sajta | MM Digital',
   description:
-    'Profesionalna SEO optimizacija u Crnoj Gori. Povećajte vidljivost na Google-u. MM Digital, SEO koji donosi organski trafik.',
+    'Profesionalna SEO optimizacija u Crnoj Gori. Povećajte vidljivost na Google-u. MM Digital, SEO koji donosi organske posjete sajtu.',
 
   schema: [
     {
@@ -15,7 +15,7 @@ export default {
       areaServed: { '@type': 'Country', name: 'Crna Gora' },
       name: 'SEO optimizacija, MM Digital',
       description:
-        'Technical SEO, on-page i off-page optimizacija, lokalni SEO, content strategija, za stabilan rast organskog trafika.',
+        'Technical SEO, on-page i off-page optimizacija, lokalni SEO, content strategija, za stabilan rast organskih posjeta.',
       url: `${site.url}/usluge/seo-optimizacija/`,
     },
     {
@@ -43,7 +43,7 @@ export default {
           name: 'Kada ću vidjeti rezultate od SEO-a?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Prvi mjesec, audit i optimizacija. Mjesec 2-3, pojavljujete se za 10-15 ključnih riječi. Mjesec 4-6, prva strana za 5-10 ključnih riječi. Mjesec 6-12, stabilan rast organskog trafika.',
+            text: 'Prvi mjesec, audit i optimizacija. Mjesec 2-3, pojavljujete se za 10-15 ključnih riječi. Mjesec 4-6, prva strana za 5-10 ključnih riječi. Mjesec 6-12, stabilan rast organskih posjeta.',
           },
         },
       ],
@@ -110,7 +110,7 @@ export default {
       columns: ['Usluga', 'Cijena', 'Šta je uključeno'],
       rows: [
         ['SEO Audit', 'od 200€', 'Kompletna analiza sajta i konkurencije'],
-        ['Mjesečni SEO', 'od 400€/mj', 'On-page + off-page + content + reporting'],
+        ['Mjesečni SEO', 'od 400€/mj', 'On-page + off-page + content + izvještavanje'],
         ['Lokalni SEO', 'od 250€/mj', 'GBP + lokalne KW + recenzije'],
         ['SEO + Sajt', 'od 1.500€', 'Sajt optimizovan od prvog dana'],
       ],
@@ -125,7 +125,7 @@ export default {
         ['Mjesec 1', 'Audit, optimizacija, prvi sadržaj'],
         ['Mjesec 2-3', 'Pojavljujete se za 10-15 ključnih riječi'],
         ['Mjesec 4-6', 'Prva strana za 5-10 ključnih riječi'],
-        ['Mjesec 6-12', 'Stabilna pozicija, organski trafik raste'],
+        ['Mjesec 6-12', 'Stabilna pozicija, organske posjete rastu'],
       ],
       alt: true,
     },

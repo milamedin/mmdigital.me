@@ -107,7 +107,7 @@ export default {
       title: 'Priča koja nije savršena, *i to je poenta*.',
       paragraphs: [
         'Nećemo vam pričati bajku o tome kako smo od prvog dana imali viziju i sve je išlo glatko. Nije.',
-        'Prve kampanje nisu bile savršene. Učili smo na greškama, i to je ono što nas čini boljim od agencija koje vam prodaju "garantovane rezultate". **Mi znamo šta NE radi jer smo to probali.** Znamo da broad targeting ponekad pobjeđuje detaljno ciljanje. Znamo da email s "ružnim" subject line-om ponekad ima bolji open rate od "savršenog". Znamo da profesionalna fotografija ponekad gubi od slike snimljene telefonom.',
+        'Prve kampanje nisu bile savršene. Učili smo na greškama, i to je ono što nas čini boljim od agencija koje vam prodaju "garantovane rezultate". **Mi znamo šta NE radi jer smo to probali.** Znamo da široko ciljanje ponekad pobjeđuje detaljno. Znamo da email s "ružnim" naslovom ponekad ima više otvaranja od "savršenog". Znamo da profesionalna fotografija ponekad gubi od slike snimljene telefonom.',
         'To iskustvo ne možete kupiti. Možete ga samo steći.',
       ],
     },
