@@ -46,6 +46,7 @@ export default {
 
     {
       type: 'cards',
+      theme: 'light',
       label: 'Šta radimo',
       title: 'Naše usluge digitalnog marketinga',
       cols: 3,
@@ -81,7 +82,6 @@ export default {
           text: 'Više nije dovoljno dovesti ljude na sajt, treba ih i pretvoriti u klijente. Optimizacija landing stranica, formi i toka kupovine.',
         },
       ],
-      alt: true,
     },
 
     {

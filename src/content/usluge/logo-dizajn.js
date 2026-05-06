@@ -46,15 +46,15 @@ export default {
 
     {
       type: 'values',
+      theme: 'light',
       label: 'Pravila',
-      title: 'Logo za firmu, *tri pravila*',
+      title: 'Logo za firmu, *četiri pravila*',
       items: [
         { title: 'Prepoznatljivost', text: 'Mora se razlikovati od konkurencije. Ako vaš logo izgleda kao svaki drugi u vašoj industriji, ne radi svoj posao.' },
         { title: 'Skalabilnost', text: 'Mora izgledati dobro na vizit karti (3cm) i na bilbordu (3m). Previše detalja = gubi se na malim formatima.' },
         { title: 'Trajnost', text: 'Trendovi prolaze. Vaš logo treba da izgleda relevantno i za 10 godina.' },
         { title: 'Funkcionalnost', text: 'Mora raditi u jednoj boji, na svijetloj i tamnoj pozadini, u horizontalnoj i vertikalnoj verziji.' },
       ],
-      alt: true,
     },
 
     {

@@ -39,6 +39,7 @@ export default {
 
     {
       type: 'text',
+      theme: 'light',
       label: 'Industrije',
       title: 'Sa kim *radimo* (i sa kim ne).',
       paragraphs: [
@@ -47,7 +48,6 @@ export default {
         'Ako vaš biznis pripada nekoj od industrija gore, ili je nešto sasvim drugo ali znate šta radite, [razgovarajmo](/kontakt/).',
       ],
       align: 'left',
-      alt: true,
     },
 
     {

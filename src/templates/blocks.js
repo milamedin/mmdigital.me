@@ -139,7 +139,7 @@ export const values = ({ label, title, intro, items = [], alt = false, theme = '
             ${intro ? `<p>${paragraph(intro)}</p>` : ''}
           </div>`
         : ''}
-      <div class="values">
+      <div class="values ${items.length === 3 ? 'values--3' : ''}">
         ${items
           .map(
             (it, i) => `

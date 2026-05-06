@@ -55,7 +55,7 @@ Vodim već nekoliko godina kreativnu agenciju i mogu vam reći da postoji par gr
 
 Najprije, minimalizam. Ime. Titula (ako stvarno govori nešto). Jedan broj telefona. Email. Web. To je sve. Ako baš morate i Instagram, onda samo Instagram, ne sve mreže odjednom.
 
-Pa onda, **prazan prostor**. Najbolji dizajneri vam reći da je prazan prostor (whitespace) najvažniji element dizajna. Ne tipografija. Ne boja. Praznina. Vizit karta s puno praznog prostora deluje skupo, mirno, samouvjereno.
+Pa onda, **prazan prostor**. Najbolji dizajneri će vam reći da je prazan prostor (whitespace) najvažniji element dizajna. Ne tipografija. Ne boja. Praznina. Vizit karta s puno praznog prostora djeluje skupo, mirno, samouvjereno.
 
 Onda, **tipografija koja nije Arial ili Times**. Birajte font koji odgovara vašem brendu. Ako vodite advokatsku kancelariju, nećete koristiti isti font kao butik. Ako vodite IT firmu, nećete koristiti isti kao restoran.
 

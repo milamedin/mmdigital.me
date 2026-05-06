@@ -83,7 +83,7 @@ Kada vam neko da ponudu od 1500 eura za sajt, ne plaćate "150 sati rada". Plać
 
 **Dizajn**, Vizuelno rješenje. Custom za vaš brend. Konzistentan sa vašim logom, bojama, fontom.
 
-**Razvoj**, Kodiranje. Brzina. Mobilnu verzija. Bezbjednost. Forma koja stvarno šalje email-ove.
+**Razvoj**, Kodiranje. Brzina. Mobilna verzija. Bezbjednost. Forma koja zaista šalje email-ove.
 
 **SEO setup**, Meta tagovi, schema, sitemap, internal linking, image optimizacija. Bez ovoga, Google ne razumije šta je vaš sajt.
 
@@ -103,7 +103,7 @@ Postoje stvari na kojima nije smisleno štedjeti.
 
 **Domen**, .me ili .com ili .rs. Naručite na vaše ime. Nemojte da agencija drži vaš domen kod sebe, to je vaš asset. Ako se posvađate sa agencijom, domen je vaš da bi mogli da pređete kod drugog.
 
-**SSL sertifikat**, Onaj zelevi katanac u browseru. Mora biti. Ako ga nema, Google snižava vaš sajt u rezultatima i posjetioci vide "Not secure" upozorenje.
+**SSL sertifikat**, Onaj zeleni katanac u browseru. Mora biti. Ako ga nema, Google snižava vaš sajt u rezultatima i posjetioci vide "Not secure" upozorenje.
 
 **Backup**, Ako ne plaćate backup, jedan dan kad se nešto desi (server padne, neko slučajno obriše, hakerski napad), gubite sve. Mjesečna cijena backup-a, 5-10 eura. Cijena ne-backup-a, sve.
 

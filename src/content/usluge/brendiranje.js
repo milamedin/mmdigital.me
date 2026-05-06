@@ -57,6 +57,7 @@ export default {
 
     {
       type: 'cards',
+      theme: 'light',
       label: 'Šta brendiramo',
       title: 'Naše usluge *brendiranja*',
       cols: 3,

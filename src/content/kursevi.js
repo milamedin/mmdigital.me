@@ -41,6 +41,7 @@ export default {
 
     {
       type: 'cards',
+      theme: 'light',
       label: 'Kursevi',
       title: 'Odaberite svoj *nivo*',
       cols: 3,
@@ -61,13 +62,12 @@ export default {
           text: '**797€**, Napredne strategije + grupni coaching. Za profesionalce. Mjesečne sesije, lični feedback, pristup zatvorenoj zajednici.',
         },
       ],
-      alt: true,
     },
 
     {
       type: 'text',
       paragraphs: [
-        'Kursevi su trenutno u finalizaciji. Prijavite se da budete prvi koji će dobiti pristup kad budu live, ranciji bookersi dobijaju **30% popusta**.',
+        'Kursevi su trenutno u finalizaciji. Prijavite se da prvi dobijete pristup kad krenu, **rane prijave imaju 30% popusta**.',
       ],
     },
 

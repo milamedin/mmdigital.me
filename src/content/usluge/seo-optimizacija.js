@@ -114,12 +114,10 @@ export default {
         ['Lokalni SEO', 'od 250€/mj', 'GBP + lokalne KW + recenzije'],
         ['SEO + Sajt', 'od 1.500€', 'Sajt optimizovan od prvog dana'],
       ],
-      alt: true,
     },
 
     {
       type: 'pricing',
-      theme: 'light',
       label: 'Očekivanja',
       title: 'Kada ću *vidjeti rezultate*?',
       columns: ['Vrijeme', 'Šta se dešava'],
@@ -129,6 +127,7 @@ export default {
         ['Mjesec 4-6', 'Prva strana za 5-10 ključnih riječi'],
         ['Mjesec 6-12', 'Stabilna pozicija, organski trafik raste'],
       ],
+      alt: true,
     },
 
     {

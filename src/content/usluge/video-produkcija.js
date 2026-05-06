@@ -62,11 +62,12 @@ export default {
 
     {
       type: 'values',
+      theme: 'light',
       label: 'Formula',
       title: 'Kako snimamo, *E-P-R formula*',
       items: [
         { title: 'E, Emocija', text: 'Prve 2 sekunde. Hook koji zaustavlja scroll. Iznenađenje, radoznalost, intriga.' },
-        { title: 'P, Proces', text: 'Sredina. Nešto što gledaoc nije očekivao. Proces je hipnotičan, ljudi ne mogu prestati gledati.' },
+        { title: 'P, Proces', text: 'Sredina. Nešto što gledalac nije očekivao. Proces je hipnotičan, ljudi ne mogu prestati gledati.' },
         { title: 'R, Rezultat', text: 'Kraj. Gotov proizvod, zadovoljan klijent, konkretan ishod. I CTA.' },
       ],
     },

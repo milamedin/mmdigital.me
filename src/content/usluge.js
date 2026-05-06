@@ -49,6 +49,7 @@ export default {
 
     {
       type: 'cards',
+      theme: 'light',
       label: 'Dizajn i brend',
       title: 'Vizuelni *identitet*',
       cols: 3,
@@ -57,7 +58,6 @@ export default {
         { icon: '◰', title: 'Grafički dizajn', text: 'Vizit karte, flajeri, meniji, katalozi, promo materijal.', href: '/usluge/graficki-dizajn/' },
         { icon: '✺', title: 'Brendiranje', text: 'Vizuelni identitet, izlozi, prostori, vozila, uniforme.', href: '/usluge/brendiranje/' },
       ],
-      alt: true,
     },
 
     {

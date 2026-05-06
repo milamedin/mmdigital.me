@@ -46,6 +46,7 @@ export default {
 
     {
       type: 'cards',
+      theme: 'light',
       label: 'Šta dizajniramo',
       title: 'Naše usluge *dizajna*',
       cols: 4,
@@ -59,7 +60,6 @@ export default {
         { icon: '⌖', title: 'Knjige i publikacije', text: 'Korice, layout, tipografija. Za kuvare, vodiče, godišnje izvještaje, kataloge.' },
         { icon: '#', title: 'Social media dizajn', text: 'Post template-i, Story dizajn, highlight ikonice. Konzistentan vizuelni identitet na svim platformama.' },
       ],
-      alt: true,
     },
 
     {

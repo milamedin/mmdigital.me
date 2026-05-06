@@ -50,6 +50,7 @@ export default {
 
     {
       type: 'steps',
+      theme: 'light',
       label: 'Šta dalje',
       title: 'Šta se dešava nakon što *pošaljete poruku*?',
       steps: [
@@ -58,7 +59,6 @@ export default {
         { title: 'Analiza', text: 'Analiziramo vaš trenutni marketing i kažemo vam tačno gdje su prilike.' },
         { title: 'Prijedlog', text: 'Ako se slažemo da možemo pomoći, šaljemo prijedlog s cijenama i planom.' },
       ],
-      alt: true,
     },
 
     {

@@ -46,6 +46,7 @@ export default {
 
     {
       type: 'cards',
+      theme: 'light',
       label: 'Tipovi kampanja',
       title: 'Naše usluge *Google oglašavanja*',
       cols: 3,
@@ -57,7 +58,6 @@ export default {
         { icon: '▶', title: 'YouTube Ads', text: 'Video oglasi pred pravom publikom. Najpogodniji format za nove brendove.' },
         { icon: '◳', title: 'Performance Max', text: 'Google AI optimizuje kampanju kroz sve kanale istovremeno za maksimalan ROI.' },
       ],
-      alt: true,
     },
 
     {

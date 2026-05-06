@@ -14,7 +14,7 @@ export default {
     subtitle:
       'Najveći problem nije u tome što ljudi ne znaju šta je digitalni marketing. Problem je u tome što misle da znaju.',
     image: 'heroes/strategy-1.jpg',
-    imageAlt: 'Lepljive bilješke, planiranje strategije',
+    imageAlt: 'Šarene cedulje za planiranje strategije',
   },
   body: `
 Pitao me prošle nedjelje jedan vlasnik restorana iz Tivta da mu objasnim "šta je tačno taj digitalni marketing". Imao je već nekoga ko mu vodi Instagram, plaćao je 150 eura mjesečno, i nije razumio zašto rezervacije ne rastu.
@@ -71,7 +71,7 @@ Treće, pokrenuli **lokalne Google Ads** sa budžetom od 5 eura dnevno. Ciljali 
 
 Četvrto, promijenili **content strategiju** na Instagramu. Manje generičkih "lijepi dan svima" objava. Više postova koji odgovaraju na pitanja klijenata: "Šta je razlika između X i Y tretmana", "Koliko traje", "Da li boli". Pokrenuli Reels.
 
-Rezultati posle 3 mjeseca: rezervacije skočile 60%. Ne zato što su radili "više marketinga". Nego zato što su konačno imali **sistem**, gdje se zna koji kanal donosi koliko, šta se mjeri, šta se mijenja kad nešto ne radi.
+Rezultati poslije 3 mjeseca: rezervacije skočile 60%. Ne zato što su radili "više marketinga". Nego zato što su konačno imali **sistem**, gdje se zna koji kanal donosi koliko, šta se mjeri, šta se mijenja kad nešto ne radi.
 
 ## Glavni kanali, bez teorije
 

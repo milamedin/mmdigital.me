@@ -72,6 +72,7 @@ export default {
 
     {
       type: 'cards',
+      theme: 'light',
       label: 'Šta fotografišemo',
       title: 'Naše usluge *fotografije*',
       cols: 3,
