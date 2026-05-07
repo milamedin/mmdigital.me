@@ -17,7 +17,7 @@ export default {
       title: 'Cijene usluga, *na jednom mjestu*.',
       subtitle:
         'Orijentacione cijene za sve naše usluge. Finalna ponuda uvijek zavisi od obima posla, kompleksnosti i specifičnih zahtjeva. Za precizan iznos, [zakažite besplatnu konsultaciju](/kontakt/).',
-      meta: 'Cijene su izražene u EUR, bez PDV-a. Dokument je interni i nije javno objavljen.',
+      meta: 'Cijene su izražene u EUR. Dokument je interni i nije javno objavljen.',
       visualText: '€',
     },
 
@@ -154,7 +154,6 @@ export default {
         '**Jednokratni projekti** (sajtovi, dizajn, fotografija, video): 50% avansno prije početka, 50% po isporuci. Za projekte preko 3.000€ moguća dinamika u tri rate.',
         '**Mjesečni angažmani** (SEO, vođenje mreža, Google Ads, retainer konsultacije): plaćanje do 5. u mjesecu za tekući mjesec. Prvi mjesec se naplaćuje pri potpisu ugovora.',
         '**Otkazni rok** za mjesečne usluge je 30 dana. Bez kazni i skrivenih troškova.',
-        '**Cijene su bez PDV-a (21%)** — agencija je u sistemu PDV-a od 2025. godine.',
         '**Faktura** stiže u prva 3 dana mjeseca, plaćanje na žiro račun u Crnoj Gori. Za inostrane klijente moguće SWIFT plaćanje (uz manju proviziju banke).',
       ],
       align: 'left',
