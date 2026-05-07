@@ -1,5 +1,5 @@
 // Base HTML wrapper — head, header, footer
-// Sve stranice prolaze kroz ovaj template.
+// Sve stranice prolaze kroz ovaj template (SR + EN).
 
 import { site } from '../content/site.js';
 
@@ -11,12 +11,70 @@ const esc = (s) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
-function navHTML(currentPath) {
+// Vraća konfiguraciju nav/footer/ui za zadati jezik.
+function localeConfig(lang) {
+  if (lang === 'en') {
+    return {
+      htmlLang: 'en',
+      ogLocale: site.en.defaultLocale,
+      nav: site.en.nav,
+      footer: site.en.footer,
+      ui: site.en.ui,
+      ctaNav: site.en.ui.ctaNav,
+      ctaHref: '/en/contact/',
+      langSwitch: { label: 'SR', title: 'Pročitaj na crnogorskom', aria: 'Pročitaj na crnogorskom' },
+      navAria: 'Main navigation',
+      menuOpenAria: 'Open menu',
+      menuCloseAria: 'Close',
+      logoAria: 'MM Digital — home',
+      copy: 'All rights reserved.',
+      made: 'Made in Montenegro',
+      contactCol: 'Contact',
+      hoursLabel: site.en.ui.contactLabelHours,
+      hoursValue: site.en.ui.contactHoursValue,
+      modalCloseAria: 'Close',
+      modalTitle: 'Thanks! Your message was <em>sent</em>.',
+      modalText: site.en.ui.modalThanksText,
+      modalOk: site.en.ui.modalOk,
+    };
+  }
+  // Default = SR / Crnogorski
+  return {
+    htmlLang: 'sr-Latn-ME',
+    ogLocale: site.defaultLocale,
+    nav: site.nav,
+    footer: site.footer,
+    ui: null,
+    ctaNav: 'Razgovarajmo →',
+    ctaHref: '/kontakt/',
+    langSwitch: { label: 'EN', title: 'Read in English', aria: 'Read in English' },
+    navAria: 'Glavna navigacija',
+    menuOpenAria: 'Otvori meni',
+    menuCloseAria: 'Zatvori',
+    logoAria: 'MM Digital — početna',
+    copy: 'Sva prava zadržana.',
+    made: 'Made in Crna Gora',
+    contactCol: 'Kontakt',
+    hoursLabel: 'Radno vrijeme',
+    hoursValue: 'Pon – Pet: 09:00 – 18:00<br>Sub – Ned: po dogovoru',
+    modalCloseAria: 'Zatvori',
+    modalTitle: 'Hvala! Poruka je <em>poslana</em>.',
+    modalText: 'Odgovaramo u roku od 24 sata. U međuvremenu — vratite se na ono što najbolje radite.',
+    modalOk: 'U redu',
+  };
+}
+
+// Inline italic format (samo *kurziv*) — koristimo u modalu.
+const inlineEm = (s) => esc(s).replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+function navHTML(currentPath, locale, alternate) {
   const isActive = (href) =>
-    href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+    href === '/' || href === '/en/'
+      ? currentPath === href
+      : currentPath.startsWith(href);
   return /* html */ `
     <ul class="nav-links" id="primary-nav">
-      ${site.nav
+      ${locale.nav
         .map((item) => {
           if (item.children && item.children.length) {
             return `
@@ -39,22 +97,23 @@ function navHTML(currentPath) {
           }>${esc(item.label)}</a></li>`;
         })
         .join('')}
-      <li><a href="#" class="nav-lang" data-translate-en title="Translate to English" aria-label="Translate to English">EN</a></li>
-      <li><a href="/kontakt/" class="btn btn--primary btn--sm nav-cta">Razgovarajmo →</a></li>
+      <li><a href="${esc(alternate || (locale.htmlLang === 'en' ? '/' : '/en/'))}" class="nav-lang" title="${esc(locale.langSwitch.title)}" aria-label="${esc(locale.langSwitch.aria)}">${esc(locale.langSwitch.label)}</a></li>
+      <li><a href="${esc(locale.ctaHref)}" class="btn btn--primary btn--sm nav-cta">${esc(locale.ctaNav)}</a></li>
     </ul>
   `;
 }
 
-function headerHTML(currentPath) {
+function headerHTML(currentPath, locale, alternate) {
+  const homeHref = locale.htmlLang === 'en' ? '/en/' : '/';
   return /* html */ `
   <header class="site-header">
     <div class="container">
-      <nav class="nav" aria-label="Glavna navigacija">
-        <a href="/" class="nav-logo" aria-label="MM Digital — početna">
+      <nav class="nav" aria-label="${esc(locale.navAria)}">
+        <a href="${homeHref}" class="nav-logo" aria-label="${esc(locale.logoAria)}">
           <img src="/images/logo.svg" alt="MM Digital" width="787" height="200">
         </a>
-        ${navHTML(currentPath)}
-        <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Otvori meni">
+        ${navHTML(currentPath, locale, alternate)}
+        <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="${esc(locale.menuOpenAria)}">
           <span></span><span></span><span></span>
         </button>
       </nav>
@@ -62,19 +121,20 @@ function headerHTML(currentPath) {
   </header>`;
 }
 
-function footerHTML() {
+function footerHTML(locale) {
   const c = site.contact;
+  const homeHref = locale.htmlLang === 'en' ? '/en/' : '/';
   return /* html */ `
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="/" class="nav-logo" aria-label="MM Digital — početna">
+          <a href="${homeHref}" class="nav-logo" aria-label="${esc(locale.logoAria)}">
             <img src="/images/logo.svg" alt="MM Digital" width="787" height="200" style="height:42px">
           </a>
-          <p>${esc(site.footer.intro)}</p>
+          <p>${esc(locale.footer.intro)}</p>
         </div>
-        ${site.footer.columns
+        ${locale.footer.columns
           .map(
             (col) => `
           <div class="footer-col">
@@ -86,7 +146,7 @@ function footerHTML() {
           )
           .join('')}
         <div class="footer-col">
-          <h4>Kontakt</h4>
+          <h4>${esc(locale.contactCol)}</h4>
           <ul>
             <li><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></li>
             <li><a href="tel:${esc(c.phoneHref)}">${esc(c.phone)}</a></li>
@@ -96,8 +156,8 @@ function footerHTML() {
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; <span data-year>2026</span> MM Digital. Sva prava zadržana.</span>
-        <span><a href="/sitemap.xml">Sitemap</a> · Made in Crna Gora</span>
+        <span>&copy; <span data-year>2026</span> MM Digital. ${esc(locale.copy)}</span>
+        <span><a href="/sitemap.xml">Sitemap</a> · ${esc(locale.made)}</span>
       </div>
     </div>
   </footer>`;
@@ -106,14 +166,12 @@ function footerHTML() {
 /**
  * Render page with shared head/header/footer.
  * @param {object} opts
- * @param {string} opts.path        - URL path, e.g. '/', '/usluge/seo-optimizacija/'
+ * @param {string} opts.path        - URL path
  * @param {string} opts.title       - <title>
  * @param {string} opts.description - meta description
- * @param {string} opts.body        - rendered <body> HTML (without header/footer)
- * @param {string} [opts.canonical] - canonical URL (defaults to site.url + path)
- * @param {object[]} [opts.schema]  - JSON-LD schema objects
- * @param {string} [opts.ogImage]   - absolute or root-relative
- * @param {string} [opts.bodyClass] - extra class on <body>
+ * @param {string} opts.body        - rendered <body> HTML
+ * @param {string} [opts.lang]      - 'sr' (default) or 'en'
+ * @param {string} [opts.alternate] - alternate-language URL (za hreflang i prebacivač)
  */
 export function renderPage(opts) {
   const {
@@ -129,13 +187,25 @@ export function renderPage(opts) {
     preloadImageMobile = null,
     preloadSizes = null,
     noindex = false,
+    lang = 'sr',
+    alternate = null,
   } = opts;
 
+  const locale = localeConfig(lang);
   const canonHref = canonical || `${site.url}${path}`;
   const ogImageAbs = ogImage.startsWith('http') ? ogImage : `${site.url}${ogImage}`;
 
+  // hreflang tagovi za parove
+  const hreflangTags = alternate
+    ? [
+        `<link rel="alternate" hreflang="${lang === 'en' ? 'en' : 'sr-Latn-ME'}" href="${esc(canonHref)}">`,
+        `<link rel="alternate" hreflang="${lang === 'en' ? 'sr-Latn-ME' : 'en'}" href="${esc(site.url + alternate)}">`,
+        `<link rel="alternate" hreflang="x-default" href="${esc(site.url + (lang === 'en' ? alternate : path))}">`,
+      ].join('\n')
+    : '';
+
   return /* html */ `<!doctype html>
-<html lang="sr-Latn-ME">
+<html lang="${esc(locale.htmlLang)}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -143,6 +213,7 @@ export function renderPage(opts) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${esc(canonHref)}">
+${hreflangTags}
 <meta name="robots" content="${noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large'}">
 <meta name="author" content="MM Digital">
 
@@ -151,7 +222,7 @@ export function renderPage(opts) {
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(canonHref)}">
 <meta property="og:site_name" content="MM Digital">
-<meta property="og:locale" content="${esc(site.defaultLocale)}">
+<meta property="og:locale" content="${esc(locale.ogLocale)}">
 <meta property="og:image" content="${esc(ogImageAbs)}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -198,18 +269,18 @@ ${site.googleAnalyticsId
   : ''}
 </head>
 <body class="${esc(bodyClass)}">
-${headerHTML(path)}
+${headerHTML(path, locale, alternate)}
 <main id="main">${body}</main>
-${footerHTML()}
+${footerHTML(locale)}
 
 <div class="modal" id="thanks-modal" hidden role="dialog" aria-labelledby="thanks-modal-title" aria-modal="true">
   <div class="modal-overlay" data-close></div>
   <div class="modal-card" role="document">
-    <button class="modal-close" type="button" data-close aria-label="Zatvori">×</button>
+    <button class="modal-close" type="button" data-close aria-label="${esc(locale.modalCloseAria)}">×</button>
     <div class="modal-icon" aria-hidden="true">✓</div>
-    <h2 id="thanks-modal-title">Hvala! Poruka je <em>poslana</em>.</h2>
-    <p>Odgovaramo u roku od 24 sata. U međuvremenu — vratite se na ono što najbolje radite.</p>
-    <button class="btn btn--primary" type="button" data-close>U redu</button>
+    <h2 id="thanks-modal-title">${locale.modalTitle}</h2>
+    <p>${esc(locale.modalText)}</p>
+    <button class="btn btn--primary" type="button" data-close>${esc(locale.modalOk)}</button>
   </div>
 </div>
 

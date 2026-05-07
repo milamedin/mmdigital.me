@@ -50,25 +50,32 @@ async function walkContent(dir) {
 }
 
 // Auto breadcrumb iz path-a
-function breadcrumbItems(p) {
-  if (p === '/') return null;
+function breadcrumbItems(p, lang = 'sr') {
+  if (p === '/' || p === '/en/') return null;
+  const isEn = lang === 'en' || p.startsWith('/en/');
   const parts = p.split('/').filter(Boolean);
-  const items = [{ label: 'Početna', href: '/' }];
-  let cur = '';
-  parts.forEach((seg, i) => {
+  const homeLabel = isEn ? 'Home' : 'Početna';
+  const homeHref = isEn ? '/en/' : '/';
+  const items = [{ label: homeLabel, href: homeHref }];
+  let cur = isEn ? '/en' : '';
+  const startIdx = isEn ? 1 : 0; // preskoči 'en' segment
+  for (let i = startIdx; i < parts.length; i++) {
+    const seg = parts[i];
     cur += `/${seg}`;
     const last = i === parts.length - 1;
-    const label = labelize(seg);
+    const label = labelize(seg, isEn);
     items.push(last ? { label } : { label, href: `${cur}/` });
-  });
+  }
   return items;
 }
-function labelize(slug) {
-  const map = {
+function labelize(slug, isEn = false) {
+  const sr = {
     'o-nama': 'O nama',
     usluge: 'Usluge',
     kursevi: 'Kursevi',
     kontakt: 'Kontakt',
+    klijenti: 'Klijenti',
+    cjenovnik: 'Cjenovnik',
     'digitalni-marketing': 'Digitalni marketing',
     'vodjenje-mreza': 'Vođenje mreža',
     'marketing-strategija': 'Marketing strategija',
@@ -82,7 +89,26 @@ function labelize(slug) {
     'google-oglasavanje': 'Google oglašavanje',
     brendiranje: 'Brendiranje',
   };
-  return map[slug] || slug;
+  const en = {
+    about: 'About',
+    services: 'Services',
+    courses: 'Courses',
+    contact: 'Contact',
+    clients: 'Clients',
+    'digital-marketing': 'Digital marketing',
+    'social-media-management': 'Social media management',
+    'marketing-strategy': 'Marketing strategy',
+    'marketing-consulting': 'Marketing consulting',
+    'graphic-design': 'Graphic design',
+    'logo-design': 'Logo design',
+    'website-development': 'Website development',
+    photography: 'Photography',
+    'video-production': 'Video production',
+    'seo-services': 'SEO services',
+    'google-ads': 'Google Ads',
+    branding: 'Branding',
+  };
+  return (isEn ? en[slug] : sr[slug]) || slug;
 }
 
 // ─── Build ───────────────────────────────────────────────────
@@ -129,6 +155,40 @@ async function build() {
     }
   }
 
+  // Bidirektni SR ↔ EN mapping za hreflang i language switcher
+  const SR_TO_EN = {
+    '/': '/en/',
+    '/o-nama/': '/en/about/',
+    '/klijenti/': '/en/clients/',
+    '/kontakt/': '/en/contact/',
+    '/kursevi/': '/en/courses/',
+    '/usluge/': '/en/services/',
+    '/usluge/digitalni-marketing/': '/en/services/digital-marketing/',
+    '/usluge/vodjenje-mreza/': '/en/services/social-media-management/',
+    '/usluge/marketing-strategija/': '/en/services/marketing-strategy/',
+    '/usluge/konsultacije/': '/en/services/marketing-consulting/',
+    '/usluge/graficki-dizajn/': '/en/services/graphic-design/',
+    '/usluge/logo-dizajn/': '/en/services/logo-design/',
+    '/usluge/izrada-sajtova/': '/en/services/website-development/',
+    '/usluge/fotografija/': '/en/services/photography/',
+    '/usluge/video-produkcija/': '/en/services/video-production/',
+    '/usluge/seo-optimizacija/': '/en/services/seo-services/',
+    '/usluge/google-oglasavanje/': '/en/services/google-ads/',
+    '/usluge/brendiranje/': '/en/services/branding/',
+  };
+  const EN_TO_SR = Object.fromEntries(Object.entries(SR_TO_EN).map(([k, v]) => [v, k]));
+  // Postavi alternate ako stranica nema svoj
+  for (const page of pages) {
+    if (page.alternate) continue;
+    if (page.path.startsWith('/en/')) {
+      const srPath = EN_TO_SR[page.path];
+      if (srPath && pages.some((p) => p.path === srPath)) page.alternate = srPath;
+    } else {
+      const enPath = SR_TO_EN[page.path];
+      if (enPath && pages.some((p) => p.path === enPath)) page.alternate = enPath;
+    }
+  }
+
   // Razdijeli blog postove od ostalih stranica
   const blogPosts = pages
     .filter((p) => p.path.startsWith('/blog/') && p.path !== '/blog/')
@@ -142,15 +202,20 @@ async function build() {
 
   console.log(`▶ Renderujem ${pages.length} stranica (od toga ${blogPosts.length} blog post${blogPosts.length === 1 ? '' : 'ova'})`);
   for (const page of pages) {
+    const pageLang = page.lang || (page.path.startsWith('/en/') ? 'en' : 'sr');
     let body;
     if (isArticle(page)) {
       body = renderArticle(page, blogPosts);
     } else {
-      const blocks = [...(page.blocks || [])];
+      // Propagiraj jezik na contact blokove (forma)
+      const blocks = (page.blocks || []).map((b) =>
+        b.type === 'contact' && !b.lang ? { ...b, lang: pageLang } : b
+      );
       // Inject auto-breadcrumb at top if not Home and no manual breadcrumb
       const hasBc = blocks.some((b) => b.type === 'breadcrumb');
-      if (!hasBc && page.path !== '/') {
-        const items = breadcrumbItems(page.path);
+      const isHomeRoot = page.path === '/' || page.path === '/en/';
+      if (!hasBc && !isHomeRoot) {
+        const items = breadcrumbItems(page.path, pageLang);
         if (items) {
           const heroIdx = blocks.findIndex((b) => b.type === 'hero');
           const bc = { type: 'breadcrumb', items };
@@ -198,6 +263,8 @@ async function build() {
       preloadImageMobile,
       preloadSizes,
       noindex: page.noindex || false,
+      lang: pageLang,
+      alternate: page.alternate || null,
     });
     const outDir = page.path === '/' ? DIST : path.join(DIST, page.path);
     await ensure(outDir);
@@ -205,16 +272,17 @@ async function build() {
     console.log(`  ✓ ${page.path}`);
   }
 
-  // 404
+  // 404 (SR — default fallback za cijeli sajt)
   const html404 = renderPage({
     path: '/404/',
     title: 'Stranica ne postoji — MM Digital',
     description: 'Stranica koju tražite ne postoji ili je premještena.',
+    lang: 'sr',
     body: `
       <section class="page-404">
         <div>
           <p class="label">404</p>
-          <h1>Ovdje *nema* ničega.</h1>
+          <h1>Ovdje <em>nema</em> ničega.</h1>
           <p>Stranica koju tražite ne postoji ili je premještena. Vratite se na početnu i pogledajte šta nudimo.</p>
           <a href="/" class="btn btn--primary btn-arrow">Nazad na početnu</a>
         </div>
@@ -223,6 +291,27 @@ async function build() {
   });
   await fs.writeFile(path.join(DIST, '404.html'), html404, 'utf8');
   console.log('  ✓ /404.html');
+
+  // EN 404
+  const html404En = renderPage({
+    path: '/en/404/',
+    title: 'Page not found — MM Digital',
+    description: 'The page you are looking for does not exist or has been moved.',
+    lang: 'en',
+    body: `
+      <section class="page-404">
+        <div>
+          <p class="label">404</p>
+          <h1>There is <em>nothing</em> here.</h1>
+          <p>The page you are looking for does not exist or has been moved. Go back to the home page and see what we offer.</p>
+          <a href="/en/" class="btn btn--primary btn-arrow">Back to home</a>
+        </div>
+      </section>
+    `,
+  });
+  await ensure(path.join(DIST, 'en'));
+  await fs.writeFile(path.join(DIST, 'en', '404.html'), html404En, 'utf8');
+  console.log('  ✓ /en/404.html');
 
   // Sitemap (preskačemo noindex stranice)
   const today = new Date().toISOString().split('T')[0];

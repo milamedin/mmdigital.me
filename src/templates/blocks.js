@@ -238,8 +238,70 @@ export const ctaSection = ({ title, text: tx, button, meta }) => `
 //   contact: { email, phone, phoneHref, instagram, instagramUrl, address: {street, city, postal, country} },
 //   endpoint: ''   // URL Google Apps Script web app-a (ako prazno, forma koristi mailto fallback)
 // }
-export const contact = ({ contact: c, endpoint = '' }) => {
-  const fallbackAction = `mailto:${c.email}?subject=${encodeURIComponent('Upit sa sajta')}&body=${encodeURIComponent('Ime: \nEmail: \nTelefon: \nBiznis: \nUsluga: \n\nPoruka: \n')}`;
+export const contact = ({ contact: c, endpoint = '', lang = 'sr' }) => {
+  const isEn = lang === 'en';
+  const t = isEn
+    ? {
+        subject: 'Inquiry from website',
+        bodyTpl: 'Name: \nEmail: \nPhone: \nBusiness: \nService: \n\nMessage: \n',
+        hp1: 'Do not fill this field:',
+        hp2: 'Do not fill this either:',
+        name: 'Full name *',
+        email: 'Email *',
+        phone: 'Phone',
+        business: 'Business name',
+        industry: 'Industry',
+        industryChoose: 'Choose…',
+        industries: ['Hospitality', 'IT', 'Retail', 'Services', 'Construction', 'Healthcare', 'Other'],
+        service: 'What are you interested in?',
+        serviceChoose: 'Choose service…',
+        services: [
+          'Digital marketing','Social media management','Marketing strategy','Marketing consulting',
+          'Website development','Graphic design','Logo design','Photography','Video production',
+          'SEO services','Google Ads','Branding','Course / Training','All / not sure',
+        ],
+        message: 'Message',
+        messagePh: 'Briefly tell us about your business and what you are looking for…',
+        submit: 'Send message',
+        directTitle: 'Direct contact',
+        labelEmail: 'Email',
+        labelPhone: 'Phone',
+        labelInstagram: 'Instagram',
+        labelAddress: 'Address',
+        labelHours: 'Hours',
+        hoursValue: 'Mon – Fri: 09:00 – 18:00<br>Sat – Sun: by appointment',
+      }
+    : {
+        subject: 'Upit sa sajta',
+        bodyTpl: 'Ime: \nEmail: \nTelefon: \nBiznis: \nUsluga: \n\nPoruka: \n',
+        hp1: 'Ne popunjavajte ovo polje:',
+        hp2: 'Ne popunjavajte ni ovo:',
+        name: 'Ime i prezime *',
+        email: 'Email *',
+        phone: 'Telefon',
+        business: 'Naziv biznisa',
+        industry: 'Industrija',
+        industryChoose: 'Izaberi…',
+        industries: ['Ugostiteljstvo', 'IT', 'Retail', 'Usluge', 'Građevina', 'Zdravstvo', 'Drugo'],
+        service: 'Šta vas zanima?',
+        serviceChoose: 'Izaberi uslugu…',
+        services: [
+          'Digitalni marketing','Vođenje društvenih mreža','Marketing strategija','Marketing konsultacije',
+          'Izrada sajta','Grafički dizajn','Logo dizajn','Fotografija','Video produkcija',
+          'SEO optimizacija','Google oglašavanje','Brendiranje','Kurs / Obuka','Sve / nisam siguran',
+        ],
+        message: 'Poruka',
+        messagePh: 'Recite nam ukratko o vašem biznisu i šta tražite…',
+        submit: 'Pošalji poruku',
+        directTitle: 'Direktan kontakt',
+        labelEmail: 'Email',
+        labelPhone: 'Telefon',
+        labelInstagram: 'Instagram',
+        labelAddress: 'Adresa',
+        labelHours: 'Radno vrijeme',
+        hoursValue: 'Pon – Pet: 09:00 – 18:00<br>Sub – Ned: po dogovoru',
+      };
+  const fallbackAction = `mailto:${c.email}?subject=${encodeURIComponent(t.subject)}&body=${encodeURIComponent(t.bodyTpl)}`;
   const action = endpoint || fallbackAction;
   const method = endpoint ? 'POST' : 'GET';
   return `
@@ -248,102 +310,83 @@ export const contact = ({ contact: c, endpoint = '' }) => {
       <div class="contact-grid">
         <form class="contact-form reveal" name="kontakt" method="${method}" action="${esc(action)}" data-endpoint="${esc(endpoint)}" novalidate>
           <p class="form-hp" aria-hidden="true">
-            <label>Ne popunjavajte ovo polje:<input tabindex="-1" autocomplete="off" name="website" value=""></label>
-            <label>Ne popunjavajte ni ovo:<input tabindex="-1" autocomplete="off" name="url" value=""></label>
+            <label>${esc(t.hp1)}<input tabindex="-1" autocomplete="off" name="website" value=""></label>
+            <label>${esc(t.hp2)}<input tabindex="-1" autocomplete="off" name="url" value=""></label>
           </p>
           <input type="hidden" name="form_loaded_at" value="">
           <input type="hidden" name="form_filled_for" value="">
 
           <div class="form-row form-row--2">
             <div>
-              <label class="form-label" for="ime">Ime i prezime *</label>
+              <label class="form-label" for="ime">${esc(t.name)}</label>
               <input class="form-input" id="ime" name="ime" type="text" required autocomplete="name">
             </div>
             <div>
-              <label class="form-label" for="email">Email *</label>
+              <label class="form-label" for="email">${esc(t.email)}</label>
               <input class="form-input" id="email" name="email" type="email" required autocomplete="email">
             </div>
           </div>
 
           <div class="form-row form-row--2">
             <div>
-              <label class="form-label" for="telefon">Telefon</label>
+              <label class="form-label" for="telefon">${esc(t.phone)}</label>
               <input class="form-input" id="telefon" name="telefon" type="tel" autocomplete="tel">
             </div>
             <div>
-              <label class="form-label" for="biznis">Naziv biznisa</label>
+              <label class="form-label" for="biznis">${esc(t.business)}</label>
               <input class="form-input" id="biznis" name="biznis" type="text" autocomplete="organization">
             </div>
           </div>
 
           <div class="form-row form-row--2">
             <div>
-              <label class="form-label" for="industrija">Industrija</label>
+              <label class="form-label" for="industrija">${esc(t.industry)}</label>
               <select class="form-input" id="industrija" name="industrija">
-                <option value="">Izaberi…</option>
-                <option>Ugostiteljstvo</option>
-                <option>IT</option>
-                <option>Retail</option>
-                <option>Usluge</option>
-                <option>Građevina</option>
-                <option>Zdravstvo</option>
-                <option>Drugo</option>
+                <option value="">${esc(t.industryChoose)}</option>
+                ${t.industries.map((i) => `<option>${esc(i)}</option>`).join('')}
               </select>
             </div>
             <div>
-              <label class="form-label" for="usluga">Šta vas zanima?</label>
+              <label class="form-label" for="usluga">${esc(t.service)}</label>
               <select class="form-input" id="usluga" name="usluga">
-                <option value="">Izaberi uslugu…</option>
-                <option>Digitalni marketing</option>
-                <option>Vođenje društvenih mreža</option>
-                <option>Marketing strategija</option>
-                <option>Marketing konsultacije</option>
-                <option>Izrada sajta</option>
-                <option>Grafički dizajn</option>
-                <option>Logo dizajn</option>
-                <option>Fotografija</option>
-                <option>Video produkcija</option>
-                <option>SEO optimizacija</option>
-                <option>Google oglašavanje</option>
-                <option>Brendiranje</option>
-                <option>Kurs / Obuka</option>
-                <option>Sve / nisam siguran</option>
+                <option value="">${esc(t.serviceChoose)}</option>
+                ${t.services.map((s) => `<option>${esc(s)}</option>`).join('')}
               </select>
             </div>
           </div>
 
           <div class="form-row">
-            <label class="form-label" for="poruka">Poruka</label>
-            <textarea class="form-input" id="poruka" name="poruka" rows="5" placeholder="Recite nam ukratko o vašem biznisu i šta tražite…"></textarea>
+            <label class="form-label" for="poruka">${esc(t.message)}</label>
+            <textarea class="form-input" id="poruka" name="poruka" rows="5" placeholder="${esc(t.messagePh)}"></textarea>
           </div>
 
           <div class="form-row">
-            <button type="submit" class="btn btn--primary btn-arrow">Pošalji poruku</button>
+            <button type="submit" class="btn btn--primary btn-arrow">${esc(t.submit)}</button>
             <p class="form-status" data-form-status hidden></p>
           </div>
         </form>
 
         <aside class="contact-info reveal">
-          <h3>Direktan kontakt</h3>
+          <h3>${esc(t.directTitle)}</h3>
           <div class="contact-info-item">
-            <span class="contact-info-label">Email</span>
+            <span class="contact-info-label">${esc(t.labelEmail)}</span>
             <span class="contact-info-value"><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></span>
           </div>
           <div class="contact-info-item">
-            <span class="contact-info-label">Telefon</span>
+            <span class="contact-info-label">${esc(t.labelPhone)}</span>
             <span class="contact-info-value"><a href="tel:${esc(c.phoneHref)}">${esc(c.phone)}</a></span>
           </div>
           <div class="contact-info-item">
-            <span class="contact-info-label">Instagram</span>
+            <span class="contact-info-label">${esc(t.labelInstagram)}</span>
             <span class="contact-info-value"><a href="${esc(c.instagramUrl)}" target="_blank" rel="noopener">${esc(c.instagram)}</a></span>
           </div>
           <div class="contact-info-item">
-            <span class="contact-info-label">Adresa</span>
+            <span class="contact-info-label">${esc(t.labelAddress)}</span>
             <span class="contact-info-value">${esc(c.address.street)}<br>${esc(c.address.postal)} ${esc(c.address.city)}<br>${esc(c.address.country)}</span>
           </div>
           <div class="contact-info-item">
-            <span class="contact-info-label">Radno vrijeme</span>
-            <span class="contact-info-value">Pon – Pet: 09:00 – 18:00<br>Sub – Ned: po dogovoru</span>
+            <span class="contact-info-label">${esc(t.labelHours)}</span>
+            <span class="contact-info-value">${t.hoursValue}</span>
           </div>
         </aside>
       </div>
