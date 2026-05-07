@@ -1,6 +1,9 @@
 # Cloudflare Pages / Netlify redirect-i
 # Format: from-path  to-path  status (301 stalno, 302 privremeno)
 
+# www → bez www (canonical, da Google ne broji kao dva sajta)
+https://www.mmdigital.me/*  https://mmdigital.me/:splat  301!
+
 # Stari WordPress URL-ovi → novi (mapa nakon migracije s WP-a)
 # Primjer: /old-url/  /new-url/  301
 # Po potrebi dodaj svoje redirect-e ispod ovog komentara.

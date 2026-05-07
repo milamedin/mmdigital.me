@@ -98,9 +98,13 @@ export function renderArticleHero({ label, title, subtitle, image, imageAlt, dat
           ? (() => {
               const isJpg = /\.jpe?g$/i.test(image);
               const avif = isJpg ? image.replace(/\.jpe?g$/i, '.avif') : null;
+              const jpgMobile = image.replace(/(\.jpe?g)$/i, '-600$1');
+              const avifMobile = avif ? avif.replace(/(\.avif)$/i, '-600$1') : null;
+              const sizes = '(max-width: 880px) 100vw, 880px';
               return `<div class="article-hero-image reveal">
               <picture>
-                ${avif ? `<source srcset="/images/${esc(avif)}" type="image/avif">` : ''}
+                ${avif ? `<source type="image/avif" sizes="${sizes}" srcset="/images/${esc(avifMobile)} 600w, /images/${esc(avif)} 900w">` : ''}
+                <source type="image/jpeg" sizes="${sizes}" srcset="/images/${esc(jpgMobile)} 600w, /images/${esc(image)} 900w">
                 <img src="/images/${esc(image)}" alt="${esc(imageAlt || '')}" loading="eager" fetchpriority="high" decoding="async" width="900" height="600">
               </picture>
               <div class="hero-visual-overlay" aria-hidden="true"></div>

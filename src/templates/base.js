@@ -125,6 +125,8 @@ export function renderPage(opts) {
     ogImage = '/images/og-default.svg',
     bodyClass = '',
     preloadImage = null,
+    preloadImageMobile = null,
+    preloadSizes = null,
   } = opts;
 
   const canonHref = canonical || `${site.url}${path}`;
@@ -171,7 +173,11 @@ export function renderPage(opts) {
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/main.css">
-${preloadImage ? `<link rel="preload" as="image" href="${esc(preloadImage)}" type="image/avif" fetchpriority="high">` : ''}
+${preloadImage
+  ? (preloadImageMobile && preloadSizes
+      ? `<link rel="preload" as="image" type="image/avif" fetchpriority="high" imagesrcset="${esc(preloadImageMobile)} 600w, ${esc(preloadImage)} 900w" imagesizes="${esc(preloadSizes)}">`
+      : `<link rel="preload" as="image" href="${esc(preloadImage)}" type="image/avif" fetchpriority="high">`)
+  : ''}
 ${schema
   .map(
     (s) =>

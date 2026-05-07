@@ -4,6 +4,7 @@
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { spawn } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { renderPage } from './src/templates/base.js';
 import { renderBlocks } from './src/templates/blocks.js';
@@ -91,6 +92,9 @@ async function build() {
   await rmrf(DIST);
   await ensure(DIST);
 
+  // Generiši mobile (-600w) verzije hero slika prije copy-ja
+  await generateMobileHeroes();
+
   // Copy public assets
   console.log('▶ Kopiram public/');
   await copyDir(path.join(SRC, 'public'), DIST);
@@ -168,13 +172,19 @@ async function build() {
     }
     // Auto-detect LCP image (first hero block) za preload
     let preloadImage = null;
+    let preloadImageMobile = null;
+    let preloadSizes = null;
+    const setPreload = (img, sizesValue) => {
+      const avif = img.replace(/\.jpe?g$/i, '.avif');
+      preloadImage = `/images/${avif}`;
+      preloadImageMobile = `/images/${avif.replace(/(\.avif)$/i, '-600$1')}`;
+      preloadSizes = sizesValue;
+    };
     if (isArticle(page) && page.hero?.image) {
-      preloadImage = `/images/${page.hero.image.replace(/\.jpe?g$/i, '.avif')}`;
+      setPreload(page.hero.image, '(max-width: 880px) 100vw, 880px');
     } else if (Array.isArray(page.blocks)) {
       const heroBlock = page.blocks.find((b) => b.type === 'hero' && b.image);
-      if (heroBlock) {
-        preloadImage = `/images/${heroBlock.image.replace(/\.jpe?g$/i, '.avif')}`;
-      }
+      if (heroBlock) setPreload(heroBlock.image, '(max-width: 880px) 100vw, 540px');
     }
 
     const html = renderPage({
@@ -185,6 +195,8 @@ async function build() {
       schema: enrichSchema(page),
       body,
       preloadImage,
+      preloadImageMobile,
+      preloadSizes,
     });
     const outDir = page.path === '/' ? DIST : path.join(DIST, page.path);
     await ensure(outDir);
@@ -232,6 +244,52 @@ ${urls.join('\n')}
   console.log('  ✓ /sitemap.xml');
 
   console.log(`✓ Build gotov za ${((Date.now() - t0) / 1000).toFixed(2)}s · ${pages.length} stranica → dist/`);
+}
+
+// ─── Mobile (600w) verzije hero slika preko macOS `sips` ─────
+// Generiše `<base>-600.jpg` i `<base>-600.avif` pored originala u src/public/images/heroes/.
+// Skipuje ako je mobile verzija novija od izvora. Ako sips ne postoji (Linux build),
+// preskače cijeli korak i template fall-back-uje na originale.
+async function generateMobileHeroes() {
+  const heroesDir = path.join(SRC, 'public', 'images', 'heroes');
+  // Provjeri ima li sips uopšte (samo macOS)
+  const hasSips = await fileExists('/usr/bin/sips');
+  if (!hasSips) {
+    console.log('▶ Preskačem mobile hero generisanje (sips nije dostupan)');
+    return;
+  }
+  let entries;
+  try { entries = await fs.readdir(heroesDir); } catch { return; }
+  let made = 0;
+  for (const name of entries) {
+    if (!/\.(jpe?g|avif)$/i.test(name)) continue;
+    if (/-600\./.test(name)) continue;                  // već mobile verzija
+    const ext = name.match(/\.(jpe?g|avif)$/i)[1].toLowerCase();
+    const base = name.replace(/\.(jpe?g|avif)$/i, '');
+    const outName = `${base}-600.${ext === 'jpg' ? 'jpg' : ext}`;
+    const src = path.join(heroesDir, name);
+    const out = path.join(heroesDir, outName);
+    if (await isUpToDate(out, src)) continue;           // već generisano
+    const args = ext === 'avif'
+      ? ['-Z', '600', '-s', 'format', 'avif', src, '--out', out]
+      : ['-Z', '600', '-s', 'format', 'jpeg', '-s', 'formatOptions', '75', src, '--out', out];
+    await new Promise((resolve, reject) => {
+      const p = spawn('/usr/bin/sips', args, { stdio: 'ignore' });
+      p.on('exit', (code) => code === 0 ? resolve() : reject(new Error(`sips exit ${code}`)));
+    });
+    made++;
+  }
+  if (made > 0) console.log(`▶ Generisao ${made} mobile hero slika (-600w)`);
+}
+
+async function fileExists(p) {
+  try { await fs.access(p); return true; } catch { return false; }
+}
+async function isUpToDate(out, src) {
+  try {
+    const [a, b] = await Promise.all([fs.stat(out), fs.stat(src)]);
+    return a.mtimeMs >= b.mtimeMs;
+  } catch { return false; }
 }
 
 // ─── Minifikacija (bez npm zavisnosti) ───────────────────
