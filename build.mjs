@@ -95,10 +95,12 @@ async function build() {
   console.log('▶ Kopiram public/');
   await copyDir(path.join(SRC, 'public'), DIST);
 
-  // Copy CSS + JS as /assets/*
+  // Minify CSS + JS u /assets/*
   await ensure(path.join(DIST, 'assets'));
-  await fs.copyFile(path.join(SRC, 'styles', 'main.css'), path.join(DIST, 'assets', 'main.css'));
-  await fs.copyFile(path.join(SRC, 'scripts', 'main.js'), path.join(DIST, 'assets', 'main.js'));
+  const css = await fs.readFile(path.join(SRC, 'styles', 'main.css'), 'utf8');
+  await fs.writeFile(path.join(DIST, 'assets', 'main.css'), minifyCss(css), 'utf8');
+  const js = await fs.readFile(path.join(SRC, 'scripts', 'main.js'), 'utf8');
+  await fs.writeFile(path.join(DIST, 'assets', 'main.js'), minifyJs(js), 'utf8');
 
   // Discover and render pages
   console.log('▶ Učitavam content/');
@@ -230,6 +232,81 @@ ${urls.join('\n')}
   console.log('  ✓ /sitemap.xml');
 
   console.log(`✓ Build gotov za ${((Date.now() - t0) / 1000).toFixed(2)}s · ${pages.length} stranica → dist/`);
+}
+
+// ─── Minifikacija (bez npm zavisnosti) ───────────────────
+// Konzervativni minifikatori — uklanjaju komentare i višak whitespace-a.
+// Cilj: zadovoljiti Pingdom / Lighthouse "Unminified" provjere bez riskovanja sintakse.
+function minifyCss(src) {
+  return src
+    .replace(/\/\*[\s\S]*?\*\//g, '')        // /* komentari */
+    .replace(/\s+/g, ' ')                     // collapse whitespace
+    .replace(/\s*([{}:;,>+~])\s*/g, '$1')     // razmak oko separatora
+    .replace(/;}/g, '}')                      // suvišan `;` prije `}`
+    .replace(/:\s*0(px|em|rem|%)/g, ':0')     // `0px` → `0`
+    .trim();
+}
+
+function minifyJs(src) {
+  // Token-aware skidanje komentara — preskače sadržaj string-ova i regex literala.
+  // Konzervativno: ne diramo whitespace unutar literala da ne pokvarimo template strings.
+  let out = '';
+  const n = src.length;
+  let i = 0;
+  let prev = '';                              // posljednji značajan karakter (za regex disambiguaciju)
+  while (i < n) {
+    const c = src[i];
+    const c2 = src[i + 1];
+    if (c === '/' && c2 === '/') {            // // line comment
+      while (i < n && src[i] !== '\n') i++;
+      continue;
+    }
+    if (c === '/' && c2 === '*') {            // /* block comment */
+      i += 2;
+      while (i < n && !(src[i] === '*' && src[i + 1] === '/')) i++;
+      i += 2;
+      continue;
+    }
+    if (c === '"' || c === "'" || c === '`') {  // string literal — kopiraj 1:1
+      const quote = c;
+      out += c; i++;
+      while (i < n) {
+        const ch = src[i];
+        out += ch;
+        if (ch === '\\') { out += src[i + 1] || ''; i += 2; continue; }
+        i++;
+        if (ch === quote) break;
+      }
+      prev = quote;
+      continue;
+    }
+    if (c === '/' && !/[\w)\]]/.test(prev)) {  // regex literal
+      out += c; i++;
+      let inClass = false;
+      while (i < n) {
+        const ch = src[i];
+        out += ch;
+        if (ch === '\\') { out += src[i + 1] || ''; i += 2; continue; }
+        if (ch === '[') inClass = true;
+        else if (ch === ']') inClass = false;
+        else if (ch === '/' && !inClass) { i++; break; }
+        i++;
+      }
+      while (i < n && /[gimsuy]/.test(src[i])) { out += src[i]; i++; }
+      prev = '/';
+      continue;
+    }
+    out += c;
+    if (!/\s/.test(c)) prev = c;
+    i++;
+  }
+  // Collapse whitespace IZMEĐU tokena (ne diramo unutar literala — već su kopirani 1:1).
+  // Linijski pristup: trim svake linije, izbaci prazne linije.
+  return out
+    .split('\n')
+    .map((l) => l.replace(/[ \t]+/g, ' ').trim())
+    .filter((l) => l.length > 0)
+    .join('\n');
 }
 
 // ─── Klijenti / portfolio helpers ─────────────────────────

@@ -37,7 +37,7 @@ export default {
       label: 'Šta je',
       title: 'Šta je digitalni marketing, i šta *NIJE*.',
       paragraphs: [
-        'Digitalni marketing nije "objavljivanje na Instagramu". To je samo jedan mali dio.',
+        'Digitalni marketing nije "objavljivanje na Instagramu". To je samo jedan mali dio. Ako vam treba detaljniji uvod bez stručnog žargona, pogledajte naš tekst [Šta je digitalni marketing, i šta nije](/blog/sta-je-digitalni-marketing/).',
         'Digitalni marketing je sistem. Počinje od trenutka kad neko na Google-u ukuca ono što vi nudite, i završava kad taj čovjek postane vaš klijent. Između te dvije tačke postoji 20 koraka. Većina biznisa radi 2-3 od njih. **I onda se čude zašto ne radi.**',
         'Mi radimo svih 20. Od prvog klika do potpisa ugovora. Od prvog pregleda do ponovne kupovine.',
       ],
