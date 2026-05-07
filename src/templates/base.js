@@ -22,7 +22,7 @@ function localeConfig(lang) {
       ui: site.en.ui,
       ctaNav: site.en.ui.ctaNav,
       ctaHref: '/en/contact/',
-      langSwitch: { label: 'SR', title: 'Pročitaj na crnogorskom', aria: 'Pročitaj na crnogorskom' },
+      langSwitch: { label: 'ME', title: 'Pročitaj na crnogorskom', aria: 'Pročitaj na crnogorskom' },
       navAria: 'Main navigation',
       menuOpenAria: 'Open menu',
       menuCloseAria: 'Close',
