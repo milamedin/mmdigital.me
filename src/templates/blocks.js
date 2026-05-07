@@ -247,7 +247,12 @@ export const contact = ({ contact: c, endpoint = '' }) => {
     <div class="container">
       <div class="contact-grid">
         <form class="contact-form reveal" name="kontakt" method="${method}" action="${esc(action)}" data-endpoint="${esc(endpoint)}" novalidate>
-          <p class="form-hp" aria-hidden="true"><label>Ne popunjavajte ovo polje:<input tabindex="-1" autocomplete="off" name="website" value=""></label></p>
+          <p class="form-hp" aria-hidden="true">
+            <label>Ne popunjavajte ovo polje:<input tabindex="-1" autocomplete="off" name="website" value=""></label>
+            <label>Ne popunjavajte ni ovo:<input tabindex="-1" autocomplete="off" name="url" value=""></label>
+          </p>
+          <input type="hidden" name="form_loaded_at" value="">
+          <input type="hidden" name="form_filled_for" value="">
 
           <div class="form-row form-row--2">
             <div>

@@ -39,9 +39,53 @@ function doPost(e) {
   try {
     const params = (e && e.parameter) ? e.parameter : {};
 
-    // Honeypot — ako je popunjeno "website" polje, ovo je bot
-    if (params.website && params.website.trim() !== '') {
-      return jsonResponse({ status: 'spam' });
+    // ─── ANTI-SPAM PROVJERE ────────────────────────────────
+    // 1. Honeypot polja — bot popunio neko od skrivenih polja
+    if ((params.website && params.website.trim() !== '') ||
+        (params.url && params.url.trim() !== '')) {
+      return jsonResponse({ status: 'spam', reason: 'honeypot' });
+    }
+
+    // 2. Vrijeme popunjavanja — bot popunio formu za <3s ili nema timestamp
+    const startedAt = Number(params.form_loaded_at || 0);
+    if (!startedAt) {
+      return jsonResponse({ status: 'spam', reason: 'no_timestamp' });
+    }
+    const elapsed = Date.now() - startedAt;
+    if (elapsed < 3000 || elapsed > 6 * 60 * 60 * 1000) {
+      return jsonResponse({ status: 'spam', reason: 'timing' });
+    }
+
+    // 3. Ćirilica / arapsko / kinesko pismo u poruci ili imenu
+    const messageText = (params.poruka || '') + ' ' + (params.ime || '') + ' ' + (params.biznis || '');
+    if (/[Ѐ-ӿ֐-׿؀-ۿऀ-ॿ一-鿿぀-ヿ]/.test(messageText)) {
+      return jsonResponse({ status: 'spam', reason: 'foreign_script' });
+    }
+
+    // 4. Spam fraze (često iz auto-translated form spamova)
+    const spamPhrases = [
+      'kende din pris', 'votre prix', 'din pris',                  // skandinavski/francuski "tvoja cijena"
+      'casino', 'viagra', 'cialis', 'crypto', 'bitcoin',            // klasični spam
+      'seo backlink', 'guest post', 'link exchange', 'link building service',
+      'rank your site', 'rank your website', 'increase traffic',
+      'http://', 'https://',                                        // linkovi u poruci = sumnjivo
+    ];
+    const lowerMsg = (params.poruka || '').toLowerCase();
+    for (const phrase of spamPhrases) {
+      if (lowerMsg.indexOf(phrase) !== -1) {
+        return jsonResponse({ status: 'spam', reason: 'phrase:' + phrase });
+      }
+    }
+
+    // 5. Telefon — Crna Gora tel je 8-12 cifara. Više od 14 = sumnjivo (RU/UA/CN bot)
+    const phoneDigits = (params.telefon || '').replace(/\D/g, '');
+    if (phoneDigits.length > 14) {
+      return jsonResponse({ status: 'spam', reason: 'phone_format' });
+    }
+
+    // 6. Mora postojati ime i poruka, i moraju imati razumnu dužinu
+    if (!params.ime || params.ime.trim().length < 2 || params.ime.trim().length > 80) {
+      return jsonResponse({ status: 'spam', reason: 'name_length' });
     }
 
     const ss = SpreadsheetApp.getActiveSpreadsheet();

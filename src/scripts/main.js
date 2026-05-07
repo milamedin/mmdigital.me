@@ -118,12 +118,26 @@
       status.dataset.type = type || '';
     };
 
+    // Vrijeme učitavanja forme — server provjerava da prošlo bar 3 sekunde
+    const loadedAtField = form.elements.form_loaded_at;
+    if (loadedAtField) loadedAtField.value = String(Date.now());
+    // Track koje polje je posljednje fokusirano (bot često ne fokusira polja)
+    const filledForField = form.elements.form_filled_for;
+    form.querySelectorAll('input,select,textarea').forEach((el) => {
+      el.addEventListener('focus', () => {
+        if (filledForField && el.name && !/^(website|url|form_)/.test(el.name)) {
+          filledForField.value = el.name;
+        }
+      });
+    });
+
     form.addEventListener('submit', async (e) => {
-      // Honeypot — bot popunio "website" polje
-      if (form.elements.website && form.elements.website.value) {
-        e.preventDefault();
-        return;
-      }
+      // Honeypot polja — bot popunio
+      if (form.elements.website && form.elements.website.value) { e.preventDefault(); return; }
+      if (form.elements.url && form.elements.url.value) { e.preventDefault(); return; }
+      // Vrijeme popunjavanja, manje od 3s = bot
+      const startedAt = Number(loadedAtField?.value || 0);
+      if (startedAt && Date.now() - startedAt < 3000) { e.preventDefault(); return; }
 
       const endpoint = form.dataset.endpoint;
       // Bez Apps Script endpoint-a — pusti browser da otvori mailto: action
