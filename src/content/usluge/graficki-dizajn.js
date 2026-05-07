@@ -28,8 +28,8 @@ export default {
       subtitle:
         'Vizit karte, flajeri, meniji, katalozi, promo materijal. Svaki dizajn ima jedan zadatak: da vaš biznis izgleda onoliko profesionalno koliko zaista jeste.',
       cta: [{ label: 'Zakaži konsultaciju' }],
-      image: 'heroes/notebook-2.jpg',
-      imageAlt: 'Olovka na otvorenom notesu, kreativni rad',
+      image: 'heroes/graficki-1.jpg',
+      imageAlt: 'Dizajner crta na grafičkom tabletu pored laptopa',
     },
 
     {

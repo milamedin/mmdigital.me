@@ -39,6 +39,7 @@ function navHTML(currentPath) {
           }>${esc(item.label)}</a></li>`;
         })
         .join('')}
+      <li><a href="#" class="nav-lang" data-translate-en title="Translate to English" aria-label="Translate to English">EN</a></li>
       <li><a href="/kontakt/" class="btn btn--primary btn--sm nav-cta">Razgovarajmo →</a></li>
     </ul>
   `;
@@ -127,6 +128,7 @@ export function renderPage(opts) {
     preloadImage = null,
     preloadImageMobile = null,
     preloadSizes = null,
+    noindex = false,
   } = opts;
 
   const canonHref = canonical || `${site.url}${path}`;
@@ -141,7 +143,7 @@ export function renderPage(opts) {
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${esc(canonHref)}">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="robots" content="${noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large'}">
 <meta name="author" content="MM Digital">
 
 <meta property="og:type" content="website">

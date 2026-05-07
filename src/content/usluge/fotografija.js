@@ -34,8 +34,8 @@ export default {
       subtitle:
         'Poslovne fotografije, produkti, food, ambijent, tim. Profesionalne slike koje pretvaraju posjetioce u klijente.',
       cta: [{ label: 'Zakaži snimanje' }],
-      image: 'heroes/tripod-2.jpg',
-      imageAlt: 'Fotoaparat na tronožcu uz zalazak sunca nad morem',
+      image: 'heroes/fotografija-1.jpg',
+      imageAlt: 'Profesionalni foto studio sa kamerom i osvjetljenjem',
     },
 
     {

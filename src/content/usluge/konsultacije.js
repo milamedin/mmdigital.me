@@ -28,8 +28,8 @@ export default {
       subtitle:
         'Marketing konsultacije za biznise koji imaju tim, ali im treba smjer, drugo mišljenje ili ekspertiza koju nemaju in-house.',
       cta: [{ label: 'Zakaži konsultaciju' }],
-      image: 'heroes/meeting-2.jpg',
-      imageAlt: 'Ruke na laptopu uz kafu, radni razgovor',
+      image: 'heroes/konsultacije-1.jpg',
+      imageAlt: 'Poslovni sastanak uz tablet sa grafikonima i analizu',
     },
 
     {

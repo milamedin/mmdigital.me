@@ -197,6 +197,7 @@ async function build() {
       preloadImage,
       preloadImageMobile,
       preloadSizes,
+      noindex: page.noindex || false,
     });
     const outDir = page.path === '/' ? DIST : path.join(DIST, page.path);
     await ensure(outDir);
@@ -223,9 +224,9 @@ async function build() {
   await fs.writeFile(path.join(DIST, '404.html'), html404, 'utf8');
   console.log('  ✓ /404.html');
 
-  // Sitemap
+  // Sitemap (preskačemo noindex stranice)
   const today = new Date().toISOString().split('T')[0];
-  const urls = pages.map((p) => {
+  const urls = pages.filter((p) => !p.noindex).map((p) => {
     const priority = p.path === '/' ? '1.0' : p.path.startsWith('/usluge/') ? '0.8' : '0.7';
     const changefreq = p.path === '/' ? 'weekly' : 'monthly';
     return `  <url>

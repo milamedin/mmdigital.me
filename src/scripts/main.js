@@ -47,6 +47,15 @@
     });
   });
 
+  // EN translate (Google Translate na current URL)
+  document.querySelectorAll('[data-translate-en]').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = encodeURIComponent(window.location.href);
+      window.open('https://translate.google.com/translate?sl=auto&tl=en&u=' + url, '_blank', 'noopener');
+    });
+  });
+
   // Header scroll state
   const header = document.querySelector('.site-header');
   if (header) {

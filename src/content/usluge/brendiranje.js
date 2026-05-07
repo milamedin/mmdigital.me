@@ -28,8 +28,8 @@ export default {
       subtitle:
         'Vizuelni identitet, brendiranje izloga, prostora, vozila, uniformi. Da vas prepoznaju, i zapamte.',
       cta: [{ label: 'Zakaži konsultaciju' }],
-      image: 'heroes/camera-1.jpg',
-      imageAlt: 'Profesionalna oprema, snaga vizuelnog identiteta',
+      image: 'heroes/brendiranje-1.jpg',
+      imageAlt: 'Šarena polica sa brendiranim proizvodima u prodavnici',
     },
 
     {

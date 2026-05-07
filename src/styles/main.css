@@ -270,6 +270,24 @@ strong { color: var(--white); font-weight: 600; }
 .nav-links a.btn--primary { color: var(--bg); }
 .nav-links a.btn--primary:hover { color: var(--bg); }
 
+/* EN prevod toggle */
+.nav-lang {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--white);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.nav-lang:hover { border-color: var(--accent); color: var(--accent); }
+
 .nav-dropdown { position: relative; }
 .nav-dropdown > button {
   background: none;

@@ -28,8 +28,8 @@ export default {
       subtitle:
         'Kompletna marketing strategija prilagođena vašem biznisu, vašoj industriji i vašim ciljevima. Ne template. Ne generički plan. Vaša strategija.',
       cta: [{ label: 'Zakaži strateški razgovor' }],
-      image: 'heroes/strategy-1.jpg',
-      imageAlt: 'Šarene cedulje uz strateško planiranje',
+      image: 'heroes/strategy-2.jpg',
+      imageAlt: 'Plavi grafikon rasta, vizuelizacija marketing strategije',
     },
 
     {
