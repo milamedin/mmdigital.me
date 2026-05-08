@@ -19,7 +19,7 @@ export default {
   body: `
 Pitao me prošle nedjelje jedan vlasnik restorana iz Tivta da mu objasnim "šta je tačno taj digitalni marketing". Imao je već nekoga ko mu vodi Instagram, plaćao je 150 eura mjesečno, i nije razumio zašto rezervacije ne rastu.
 
-Dao sam mu nekoliko pitanja. *Da li znate koliko ljudi vidi vaše objave svaki mjesec? Koliko od njih klikne na vaš profil? Koliko od njih klikne na "Rezerviši"? Koliko zapravo pošalje poruku? Koliko od onih koji pošalju poruku, dođe?*
+Dala sam mu nekoliko pitanja. *Da li znate koliko ljudi vidi vaše objave svaki mjesec? Koliko od njih klikne na vaš profil? Koliko od njih klikne na "Rezerviši"? Koliko zapravo pošalje poruku? Koliko od onih koji pošalju poruku, dođe?*
 
 Nije znao odgovor ni na jedno.
 
