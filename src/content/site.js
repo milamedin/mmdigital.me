@@ -114,6 +114,7 @@ export const site = {
         ],
       },
       { label: 'Clients', href: '/en/clients/' },
+      { label: 'Courses', href: '/en/courses/' },
       { label: 'Contact', href: '/en/contact/' },
     ],
     footer: {
@@ -125,6 +126,7 @@ export const site = {
           links: [
             { label: 'About', href: '/en/about/' },
             { label: 'Clients', href: '/en/clients/' },
+            { label: 'Courses', href: '/en/courses/' },
             { label: 'Contact', href: '/en/contact/' },
           ],
         },

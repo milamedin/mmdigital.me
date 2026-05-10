@@ -448,13 +448,25 @@ function minifyJs(src) {
     if (!/\s/.test(c)) prev = c;
     i++;
   }
-  // Collapse whitespace IZMEĐU tokena (ne diramo unutar literala — već su kopirani 1:1).
-  // Linijski pristup: trim svake linije, izbaci prazne linije.
-  return out
-    .split('\n')
-    .map((l) => l.replace(/[ \t]+/g, ' ').trim())
-    .filter((l) => l.length > 0)
-    .join('\n');
+  // Collapse whitespace IZMEĐU tokena. Spojimo u jedan red ali pazimo na ASI:
+  // linije koje završavaju identifikatorom/zagradom/literalom i sledeća kreće
+  // s identifikatorom/literalom dobijaju razmak umjesto čistog brisanja.
+  const lines = out.split('\n').map((l) => l.replace(/[ \t]+/g, ' ').trim()).filter(Boolean);
+  let result = '';
+  for (let k = 0; k < lines.length; k++) {
+    const cur = lines[k];
+    const last = result.slice(-1);
+    const first = cur[0];
+    // Bezbedni razdvajači — možemo bez razmaka
+    const noSpaceBefore = /[{};,()\[\]=<>+\-*/%!&|?:.]/.test(first);
+    const noSpaceAfter = /[{};,(\[=<>+\-*/%!&|?:.]/.test(last) || result === '';
+    if (noSpaceBefore || noSpaceAfter) {
+      result += cur;
+    } else {
+      result += ' ' + cur;
+    }
+  }
+  return result;
 }
 
 // ─── Klijenti / portfolio helpers ─────────────────────────

@@ -40,7 +40,7 @@ function localeConfig(lang) {
   }
   // Default = SR / Crnogorski
   return {
-    htmlLang: 'sr-Latn-ME',
+    htmlLang: 'sr-Latn',
     ogLocale: site.defaultLocale,
     nav: site.nav,
     footer: site.footer,
@@ -198,8 +198,8 @@ export function renderPage(opts) {
   // hreflang tagovi za parove
   const hreflangTags = alternate
     ? [
-        `<link rel="alternate" hreflang="${lang === 'en' ? 'en' : 'sr-Latn-ME'}" href="${esc(canonHref)}">`,
-        `<link rel="alternate" hreflang="${lang === 'en' ? 'sr-Latn-ME' : 'en'}" href="${esc(site.url + alternate)}">`,
+        `<link rel="alternate" hreflang="${lang === 'en' ? 'en' : 'sr-Latn'}" href="${esc(canonHref)}">`,
+        `<link rel="alternate" hreflang="${lang === 'en' ? 'sr-Latn' : 'en'}" href="${esc(site.url + alternate)}">`,
         `<link rel="alternate" hreflang="x-default" href="${esc(site.url + (lang === 'en' ? alternate : path))}">`,
       ].join('\n')
     : '';
