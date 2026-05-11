@@ -1,5 +1,4 @@
-User-agent: *
-Allow: /
-Disallow:
+# Cloudflare AI Crawl Control automatski prependuje User-agent pravila
+# (vidi: Cloudflare Dashboard → AI Crawl Control). Mi samo deklarišemo sitemap.
 
 Sitemap: https://mmdigital.me/sitemap.xml
