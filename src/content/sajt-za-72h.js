@@ -8,7 +8,7 @@ export default {
   path: '/sajt-za-72h/',
   title: 'Sajt za 72h, profesionalan web sajt za tri radna dana | MM Digital',
   description:
-    'Već mjesecima pričate da ćete napraviti sajt? Hajde, 72 sata. Profesionalan, mobilni, optimizovan za Google. Od dogovora do live verzije za tri radna dana. Cijena fiksna, obim jasan.',
+    'Već mjesecima pričate da ćete napraviti sajt? Dajte nam 72 sata. Profesionalan, mobilni, optimizovan za Google. Od dogovora do live verzije za tri radna dana. Cijena fiksna, jasan obim.',
   ogImage: '/images/og-default.svg',
 
   schema: [
@@ -24,7 +24,7 @@ export default {
       offers: {
         '@type': 'Offer',
         priceCurrency: 'EUR',
-        price: '800',
+        price: '799',
         availability: 'https://schema.org/LimitedAvailability',
       },
     },
@@ -34,11 +34,11 @@ export default {
     {
       type: 'hero',
       label: 'Promo · Sajt za 72h',
-      title: 'Već *2 godine* pričate da ćete napraviti sajt. *Dajte nam 72 sata*.',
+      title: 'Već *mjesecima* pričate da ćete napraviti sajt. *Dajte nam 72 sata*.',
       subtitle:
         'Profesionalan, mobilni, brz sajt. Od dogovora do live verzije za **tri radna dana**. Bez 17 sastanaka. Bez "razmislićemo". Bez tri mjeseca čekanja na agenciju koja se ne javlja.',
-      cta: [{ label: 'Rezerviši svoj termin', href: '/kontakt/?usluga=Sajt%20za%2072h' }],
-      meta: 'Slotovi su limitirani. Radimo maksimum 2 ovakva sajta mjesečno. Kad se popune, popune.',
+      cta: [{ label: 'Rezerviši svoj termin', href: '#kontakt' }],
+      meta: 'Mjesta su limitirana. Radimo maksimum 4 ovakva sajta mjesečno. Kad se popune, to je to.',
       image: 'heroes/coding-1.jpg',
       imageAlt: 'Laptop sa kodom, brza izrada sajta',
     },
@@ -48,51 +48,93 @@ export default {
       label: 'Zašto i dalje nemate sajt',
       title: 'Razlog nije *vrijeme*. Niti novac. Niti motivacija.',
       paragraphs: [
-        'Niste lijeni. Niste neaktivni. Niste "neko ko ne može da donese odluku". Vaš problem je drugačiji: niko vam do sada nije ponudio iskustvo gdje od prvog razgovora tačno znate šta dobijate, koliko košta, i kad je gotovo.',
-        'Tipičan razgovor sa agencijom u Crnoj Gori izgleda ovako. Pošaljete upit. Odgovore vam za sedmicu. Sastanak. "Šta tačno trebate?" Vi ne znate. Oni vam šalju 4 različite ponude. Vi se predomišljate. Šest mjeseci kasnije i dalje govorite konkurentima "razmišljamo".',
-        'Ovo **nije to**. Tri dana. Jedan paket. Fiksna cijena. Live verzija u ponedjeljak ako počnemo u srijedu.',
-        'Ako ste se ikad uhvatili kako govorite "samo da nađem vremena za sajt", vrijeme niste imali zato što vam niko nije dao mogućnost da to bude pitanje od 30 minuta razgovora. Sad imate.',
+        'Niste lijeni. Niste neaktivni. Niste "neko ko ne može da donese odluku". Vaš problem je drugačiji: niko vam do sada nije ponudio jasne smjernice i rokove, gdje od prvog razgovora tačno znate šta dobijate, koliko košta i kad je gotovo.',
+        'Tipičan razgovor sa agencijom u Crnoj Gori izgleda ovako. Pošaljete upit. Odgovore vam za sedmicu. Sastanak. "Šta tačno trebate?" Vi ne znate. Oni vam šalju 4 različite ponude. Vi se predomišljate. Šest mjeseci kasnije i dalje niste sigurni šta ste se dogovorili sa agencijom i ko koga čeka.',
+        'Ovo **nije to**. Tri dana. Jedan paket. Fiksna cijena. Live verzija u četvrtak, ako počnemo u ponedjeljak.',
       ],
       align: 'left',
     },
 
     {
+      type: 'text',
+      label: 'Tri istine',
+      title: 'Tri stvari koje vam *niko ne govori* o sajtu',
+      paragraphs: [
+        '**Konkurencija koja ima loš sajt prolazi bolje od vas koji nemate.** Zato što barem postoji. Klijent koji kuca u Google ne pita sebe "ko najbolje radi". Pita se "ko uopšte radi". Ako vas tu nema, to pitanje ste izgubili.',
+        '**Sajt koji je koštao 200€ djeluje da je koštao 200€.** Klijent to osjeti za pola sekunde. Brzina učitavanja, font, razmaci, slike, sve odaje koliko je ko ozbiljan. Loš sajt nije neutralan. Aktivno vam šteti.',
+        '**Najveći trošak nije izrada sajta. Najveći trošak je propuštena godina.** Svaki mjesec bez sajta je mjesec u kome konkurencija dolazi do vaših klijenata prvi. Posle godinu dana, oni su brend, vi ste alternativa.',
+      ],
+      align: 'left',
+      alt: true,
+    },
+
+    {
       type: 'cards',
       label: 'Šta dobijate',
-      title: 'Šta je *uključeno* u "Sajt za 72h"',
+      title: 'Šta je sve *uključeno* u cijenu',
       intro:
-        'Sve što vam stvarno treba da pokrenete profesionalno online prisustvo. Bez dodataka koje vam niko nije objasnio.',
+        'Pogledajte šta dobijate za 799€. Bez skrivenih troškova, bez "to je dodatna usluga", bez "to ćemo naplatiti poslije".',
       cols: 3,
       cards: [
         {
           icon: '◧',
-          title: 'Custom dizajn',
-          text: 'Ne template. Pravim dizajn za vaš brend, vaše boje, vaš ton. Tri varijante prvog ekrana, vi birate kuda idemo.',
+          title: 'Custom dizajn za vaš brend',
+          text: 'Ne template. Dizajn baš za vas: vaše boje, fontovi, ton. Vi dajete vizuelne reference, mi izvodimo. Tri varijante prvog ekrana, vi birate kuda idemo.',
         },
         {
           icon: '◰',
-          title: '5–7 stranica',
-          text: 'Početna, O nama, Usluge ili Proizvodi, Kontakt + 1 do 3 dodatne po potrebi. Sve napisano da prodaje, ne da "popunjava prostor".',
+          title: '3–5 stranica koje prodaju',
+          text: 'Početna, O nama, Usluge ili Proizvodi, Kontakt + 1 dodatna po potrebi. Svaka stranica napisana da pretvori posjetioca u klijenta.',
+        },
+        {
+          icon: '⚡',
+          title: 'Mobile-first dizajn',
+          text: '70% vaših posjetilaca dolazi sa telefona. Sajt dizajniran prvo za njih, pa onda za desktop. Bez "pa stisnimo da stane na ekran".',
         },
         {
           icon: '⌖',
           title: 'SEO od prvog dana',
-          text: 'Meta tagovi, schema, sitemap, brzina iznad 80 na PageSpeed. Google vas može pronaći od trenutka kad sajt ode live.',
+          text: 'Meta tagovi, schema markup, sitemap, optimizovani naslovi i ključne riječi za svaku stranicu. Google razumije šta nudite čim sajt ode live.',
+        },
+        {
+          icon: '◳',
+          title: 'Google Analytics + Search Console',
+          text: 'Postavljeni, povezani, kalibrirani. Od prvog dana znate koliko ljudi vas posjećuje, odakle dolaze i koje stranice najviše gledaju.',
+        },
+        {
+          icon: '◉',
+          title: 'Hosting + domen prva godina',
+          text: 'Sve uračunato za 12 mjeseci. Hosting, domen, SSL sertifikat. Bez dodatnih troškova prve godine. Od 2. godine 80€/god ako ostajete kod nas, ili prebacujete na svoj nalog.',
+        },
+        {
+          icon: '◌',
+          title: 'Prevod na druge jezike',
+          text: 'Engleski (ili neki drugi jezik) je uključen u cijenu. Paralelne verzije, isti dizajn, profesionalan prevod, ne Google Translate.',
+        },
+        {
+          icon: '◍',
+          title: 'Stock fotografije',
+          text: 'Ako nemate svoje slike, pronalazimo profesionalne royalty-free fotografije koje pristaju brendu. Bez kupovine licenci, bez "nemamo dobre slike".',
+        },
+        {
+          icon: '✎',
+          title: 'Lektura i korektura',
+          text: 'Vaše tekstove čistimo gramatički, stilski i tonalno. Ako ih nemate uopšte, pišemo vam ih (do 5 stranica uračunato).',
         },
         {
           icon: '◈',
-          title: 'Kontakt forma',
-          text: 'Ne mailto link. Prava forma sa anti-spam zaštitom. Upiti vam stižu na email u realnom vremenu.',
+          title: 'Kontakt forma sa anti-spam',
+          text: 'Prava forma, ne mailto link. Anti-spam zaštita u 6 slojeva. Upiti stižu na email ili telefon u realnom vremenu.',
         },
         {
-          icon: '⚡',
-          title: 'Mobile-first',
-          text: '70% vaših posjetilaca dolazi sa telefona. Sajt je dizajniran prvo za njih, pa onda za desktop. Ne obrnuto.',
+          icon: '◐',
+          title: 'Favicon + OG slike',
+          text: 'Ikonica koja se vidi u browser tabu i Google rezultatima. Custom slika koja se prikazuje kad neko podijeli vaš sajt na Facebook, WhatsApp, LinkedIn.',
         },
         {
           icon: '✓',
           title: '30 dana podrške',
-          text: 'Promjene teksta, ispravke, sitne dorade. Uključeno mjesec dana nakon launcha, bez dodatnog naplaćivanja.',
+          text: 'Mjesec dana nakon launcha, sve sitne ispravke i izmjene su uključene. Bez dodatnog naplaćivanja, bez ugovora.',
         },
       ],
       alt: true,
@@ -105,11 +147,11 @@ export default {
       steps: [
         {
           title: 'Dan 1 · Brif',
-          text: '60-minutni discovery razgovor (online). Definišemo ciljeve, stranice, ton, vizuelni stil. Vi mi šaljete tekstove i slike koje imate. **Do kraja dana imate kompletan brief koji potvrđujete.**',
+          text: '60-minutni discovery razgovor (online). Definišemo ciljeve, stranice, ton, vizuelni stil. Vi nam šaljete tekstove i slike koje imate. **Do kraja dana imate kompletan brief koji potvrđujete.**',
         },
         {
           title: 'Dan 2 · Dizajn + razvoj',
-          text: 'Pravim dizajn, pišem tekstove koji fale, postavljam strukturu, programiram. Vi imate jedan touchpoint oko podneva, 15 minuta poziva da vidite prvi screen. **Do kraja dana sajt je 80% gotov.**',
+          text: 'Pravimo dizajn, pišemo tekstove (ukoliko ima potrebe), postavljamo strukturu, programiramo. Vi imate jednu konsultaciju da dobijete prve informacije o izgledu sajta i vidite prvi screen. **Do kraja dana sajt je 80% gotov.**',
         },
         {
           title: 'Dan 3 · Launch',
@@ -122,35 +164,29 @@ export default {
       type: 'pricing',
       theme: 'light',
       label: 'Cijena',
-      title: 'Koliko *košta*',
+      title: '*799€*. Sve gore navedeno.',
       columns: ['', 'Detalji'],
       rows: [
-        ['Sajt za 72h (5–7 stranica)', '800€'],
-        ['+ Dodatne stranice (do 10 ukupno)', '+ 60€/stranica'],
-        ['+ Prevod na engleski ili drugi strani jezik', '+ 200€'],
-        ['+ Logo dizajn (ako nemate)', '+ 350€'],
-        ['+ Custom foto-sesija (pola dana)', '+ 250€'],
-        ['+ Tekstovi (ako nemate)', '+ 150€'],
-        ['Godišnji hosting + domen + SSL (kod mene)', '80€/god'],
-        ['Godišnji hosting + domen (klijent sam, kod provajdera)', 'Na upit'],
+        ['Sajt za 72h, kompletan paket (sve uključeno)', '799€'],
+        ['+ Dodatne stranice (preko 5, do 10 ukupno)', '+ 60€/stranica'],
+        ['Godišnje održavanje (od 2. godine, opcionalno)', '80€/god'],
       ],
-      note: 'Cijena za izradu je fiksna, ne mijenja se. Ne plaćate ništa unaprijed dok ne potvrdimo da krećemo.',
+      note: 'Cijena za izradu je fiksna, ne mijenja se. Prva godina hosting + domen + SSL je uračunata. Ne plaćate ništa unaprijed, tek kada dobijete konačan sajt.',
     },
 
     {
       type: 'text',
-      label: 'Šta vam treba od vas',
-      title: 'Šta meni *vi šaljete*',
+      label: 'Šta nam treba od vas',
+      title: 'Šta *vi šaljete nama*',
       paragraphs: [
         'Da bismo zaista završili za 72h, vi morate biti dostupni i pripremljeni. Konkretno:',
       ],
       list: [
-        '**Tekstove** (ili priznanje "nemam tekstove" pa ih ja pišem), po stranici 200 do 400 riječi',
-        '**Slike** (foto portfolio, proizvodi, prostor, tim), ili pristup ako koristimo stock',
-        '**Logo** u vektoru (.svg, .ai, .pdf), ili rješenje "nemam, treba mi"',
-        '**Brend smjernice** ako postoje (boje, font, ton), ili sloboda da ja odlučim',
-        '**60 minuta dnevno** dostupnost za pitanja, Viber, email, šta vam je lakše',
-        '**Domen** kupljen ili spremnost da ga kupimo (oko 10€)',
+        '**Tekstovi** ukoliko ih imate (mi lektorišemo i čistimo), ili nam dajte temu pa pišemo umjesto vas',
+        '**Slike** ako ih imate (proizvodi, prostor, tim), ili odobrenje da koristimo stock fotografije koje pronalazimo mi',
+        '**Logo** u vektorskom formatu (.svg, .ai, .pdf) ukoliko ga imate',
+        '**Brend smjernice** ako postoje (boje, font, ton), ili sloboda da mi odlučimo',
+        '**60 minuta dnevno** dostupnost za pitanja, Viber ili email',
       ],
     },
 
@@ -200,11 +236,11 @@ export default {
         'Iskreno, neke situacije ne odgovaraju formatu 72h. Ne uzimajte ako:',
       ],
       list: [
-        '**Trebate e-commerce** sa katalogom od 100+ proizvoda. To je drugačiji projekat (3 do 6 sedmica).',
+        '**Trebate e-commerce** sa katalogom od 20+ proizvoda. To je drugačiji projekat (3 do 6 sedmica).',
         '**Nemate ideju** šta uopšte želite. Onda vam prvo treba strategija, ne sajt.',
         '**Niste dostupni 3 dana** za odgovore na pitanja. 72h zahtijeva vašu pažnju.',
-        '**Tražite custom funkcionalnosti** (booking sistemi, plaćanja, kalendar integracije). Pravi obim, pravi rok.',
-        '**Pregovarate o svakom euru**. Cijena je fiksna, ako vam je 800€ previše, ovo nije pravi paket za sad.',
+        '**Tražite custom funkcionalnosti** (booking sistemi, plaćanja, kalendar integracije). Veći obim zahtjeva duži rok.',
+        '**Pregovarate o svakom euru**. Cijena je fiksna, ako vam je 799€ previše, ovo nije pravi paket za sad.',
       ],
       alt: true,
     },
@@ -216,11 +252,11 @@ export default {
       items: [
         {
           title: 'Šta ako mi se prvi dizajn ne svidi?',
-          text: 'Uključena je jedna runa revizije u dan 2. Vraćamo se na brief, korigujemo, idemo dalje. Ako se nakon revizije i dalje ne slažemo, refundiram avans i razilazimo se prijateljski.',
+          text: 'Uključene su dvije runde revizije u dan 2. Vraćamo se na brief, korigujemo, idemo dalje. Ako se nakon revizije i dalje ne slažemo, razilazimo se prijateljski.',
         },
         {
           title: 'Šta ako prekoračimo rok?',
-          text: 'Ako kasnim ja, popust 10% na finalnu cijenu. Ako kasnite vi (ne šaljete materijale na vrijeme), produžava se rok bez kazne, ali sajt više nije "72h".',
+          text: 'Ako kasnim ja, popust 20% na finalnu cijenu. Ako kasnite vi (ne šaljete materijale na vrijeme), produžava se rok bez kazne, ali sajt više nije "72h".',
         },
         {
           title: 'Šta je sa SEO-om nakon 72h?',
@@ -232,7 +268,7 @@ export default {
         },
         {
           title: 'Šta ako trebam sajt i na engleskom?',
-          text: 'Dodaj 200€ na cijenu. Radim oba jezika paralelno, isti dizajn, prevedeni tekstovi.',
+          text: 'Engleski (ili drugi jezik) je uračunat u cijenu. Paralelne verzije, isti dizajn, profesionalan prevod, ne Google Translate. Za 3+ jezika javite se za posebnu ponudu.',
         },
         {
           title: 'Da li nudite besplatnu probu / discovery?',
@@ -242,11 +278,28 @@ export default {
     },
 
     {
+      type: 'text',
+      label: 'Kontakt',
+      title: 'Pošaljite *poruku*',
+      paragraphs: [
+        'Popunite formu ispod. Javljamo se u najkraćem roku. Ako se slažemo da radimo, krećemo. Ako ne, nema problema, niste nam ništa dužni.',
+      ],
+    },
+
+    // Anchor za hero CTA: linkuje na #kontakt
+    {
+      type: 'contact',
+      contact: site.contact,
+      endpoint: site.formEndpoint,
+      preselect: 'Sajt za 72h',
+      anchor: 'kontakt',
+    },
+
+    {
       type: 'ctaSection',
       title: 'Vrijeme za *izgovore* je isteklo.',
-      text: 'Pošaljite poruku. Javim se za 24h. Ako se slažemo da radimo, krećemo. Ako ne, nema problema, niste mi ništa dužni.',
-      button: { label: 'Rezerviši slot, krenimo', href: '/kontakt/?usluga=Sajt%20za%2072h' },
-      meta: 'Najveća prijetnja vašem biznisu nije konkurencija. Najveća prijetnja je da svaki dan koji prolazi bez sajta, gubite klijente koji nikad neće znati da ste postojali.',
+      text: 'Najveća prijetnja vašem biznisu nije konkurencija. Najveća prijetnja je da svaki dan koji prolazi bez sajta, gubite klijente koji nikad neće znati da ste postojali.',
+      button: { label: 'Rezerviši slot, krenimo', href: '#kontakt' },
     },
   ],
 };

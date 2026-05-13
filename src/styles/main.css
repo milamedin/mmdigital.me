@@ -218,7 +218,8 @@ strong { color: var(--white); font-weight: 600; }
   text-align: center;
 }
 .section-head--left { margin-left: 0; text-align: left; }
-.section-head h2 { margin-bottom: 18px; }
+.section-head h2 { margin-bottom: 24px; }
+.section-head .label + h2 { margin-top: 4px; }
 .section-head p { font-size: 18px; color: var(--muted); }
 
 /* ─── Header / Navigacija ─── */
@@ -637,6 +638,9 @@ strong { color: var(--white); font-weight: 600; }
   margin: 0 auto;
 }
 .prose--left { margin-left: 0; }
+.prose h2 { margin-bottom: 28px; }
+.prose h2 + p, .prose .label + h2 { margin-top: 0; }
+.prose .label + h2 { margin-top: 4px; }
 .prose p { font-size: 18px; color: var(--muted); margin-bottom: 1.2em; }
 .prose p strong { color: var(--white); }
 .prose ul {

@@ -238,7 +238,7 @@ export const ctaSection = ({ title, text: tx, button, meta }) => `
 //   contact: { email, phone, phoneHref, instagram, instagramUrl, address: {street, city, postal, country} },
 //   endpoint: ''   // URL Google Apps Script web app-a (ako prazno, forma koristi mailto fallback)
 // }
-export const contact = ({ contact: c, endpoint = '', lang = 'sr' }) => {
+export const contact = ({ contact: c, endpoint = '', lang = 'sr', preselect = null, anchor = null }) => {
   const isEn = lang === 'en';
   const t = isEn
     ? {
@@ -305,7 +305,7 @@ export const contact = ({ contact: c, endpoint = '', lang = 'sr' }) => {
   const action = endpoint || fallbackAction;
   const method = endpoint ? 'POST' : 'GET';
   return `
-  <section class="section">
+  <section class="section"${anchor ? ` id="${esc(anchor)}"` : ''}>
     <div class="container">
       <div class="contact-grid">
         <form class="contact-form reveal" name="kontakt" method="${method}" action="${esc(action)}" data-endpoint="${esc(endpoint)}" novalidate>
@@ -350,7 +350,7 @@ export const contact = ({ contact: c, endpoint = '', lang = 'sr' }) => {
               <label class="form-label" for="usluga">${esc(t.service)}</label>
               <select class="form-input" id="usluga" name="usluga">
                 <option value="">${esc(t.serviceChoose)}</option>
-                ${t.services.map((s) => `<option>${esc(s)}</option>`).join('')}
+                ${t.services.map((s) => `<option${preselect && s === preselect ? ' selected' : ''}>${esc(s)}</option>`).join('')}
               </select>
             </div>
           </div>
