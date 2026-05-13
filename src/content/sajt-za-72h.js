@@ -34,11 +34,11 @@ export default {
     {
       type: 'hero',
       label: 'Promo · Sajt za 72h',
-      title: 'Već *2 godine* pričate da ćete napraviti sajt. Hajde, *72 sata*.',
+      title: 'Već *2 godine* pričate da ćete napraviti sajt. *Dajte nam 72 sata*.',
       subtitle:
         'Profesionalan, mobilni, brz sajt. Od dogovora do live verzije za **tri radna dana**. Bez 17 sastanaka. Bez "razmislićemo". Bez tri mjeseca čekanja na agenciju koja se ne javlja.',
       cta: [{ label: 'Rezerviši svoj termin', href: '/kontakt/?usluga=Sajt%20za%2072h' }],
-      meta: 'Slotovi su limitirani. Radim maksimum 2 ovakva sajta mjesečno. Kad se popune, popune.',
+      meta: 'Slotovi su limitirani. Radimo maksimum 2 ovakva sajta mjesečno. Kad se popune, popune.',
       image: 'heroes/coding-1.jpg',
       imageAlt: 'Laptop sa kodom, brza izrada sajta',
     },
@@ -132,7 +132,7 @@ export default {
         ['+ Custom foto-sesija (pola dana)', '+ 250€'],
         ['+ Tekstovi (ako nemate)', '+ 150€'],
         ['Godišnji hosting + domen + SSL (kod mene)', '80€/god'],
-        ['Godišnji hosting + domen (klijent sam, kod provajdera)', 'oko 15€/god'],
+        ['Godišnji hosting + domen (klijent sam, kod provajdera)', 'Na upit'],
       ],
       note: 'Cijena za izradu je fiksna, ne mijenja se. Ne plaćate ništa unaprijed dok ne potvrdimo da krećemo.',
     },
