@@ -4,8 +4,8 @@
     {
       "name": "mmdigital",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["--yes", "serve", "dist", "-p", "4321", "--no-clipboard"],
-      "port": 4321
+      "runtimeArgs": ["--yes", "serve", "dist", "-p", "4325", "--no-clipboard"],
+      "port": 4325
     }
   ]
 }

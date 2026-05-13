@@ -14,7 +14,8 @@ const esc = (s) =>
 const inline = (s) =>
   esc(s)
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>');
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/\[br\]/g, '<br>');
 
 // Paragraph format — escapes, prepoznaje **bold** i [tekst](url).
 const paragraph = (s) =>

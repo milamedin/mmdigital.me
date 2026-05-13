@@ -36,7 +36,7 @@ export default {
       label: 'Promo · Sajt za 72h',
       title: 'Već *mjesecima* pričate da ćete napraviti sajt. *Dajte nam 72 sata*.',
       subtitle:
-        'Profesionalan, mobilni, brz sajt. Od dogovora do live verzije za **tri radna dana**. Bez 17 sastanaka. Bez "razmislićemo". Bez tri mjeseca čekanja na agenciju koja se ne javlja.',
+        'Profesionalan, mobilni, brz sajt. Od dogovora do live verzije za[br]**tri radna dana**. Bez 17 sastanaka. Bez "razmislićemo". Bez tri mjeseca čekanja na agenciju koja se ne javlja.',
       cta: [{ label: 'Rezerviši svoj termin', href: '#kontakt' }],
       meta: 'Mjesta su limitirana. Radimo maksimum 4 ovakva sajta mjesečno. Kad se popune, to je to.',
       image: 'heroes/coding-1.jpg',
@@ -196,7 +196,7 @@ export default {
         'Da bismo zaista završili za 72h, vi morate biti dostupni i pripremljeni. Konkretno:',
       ],
       list: [
-        '**Tekstovi** ukoliko ih imate (mi lektorišemo i čistimo), ili nam dajte temu pa pišemo umjesto vas',
+        '**Tekstove** ukoliko ih imate (mi lektorišemo i čistimo) ili nam dajte temu pa pišemo umjesto vas (uz doplatu)',
         '**Slike** ako ih imate (proizvodi, prostor, tim), ili odobrenje da koristimo stock fotografije koje pronalazimo mi',
         '**Logo** u vektorskom formatu (.svg, .ai, .pdf) ukoliko ga imate',
         '**Brend smjernice** ako postoje (boje, font, ton), ili sloboda da mi odlučimo',
