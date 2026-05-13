@@ -207,7 +207,7 @@ export default {
     {
       type: 'values',
       label: 'Portfolio',
-      title: 'Sajtovi koje sam *radila ranije*',
+      title: 'Sajtovi koje smo *radili ranije*',
       intro: 'Da vidite kako izgleda krajnji rezultat, ne samo obećanje. Klikni na karticu za live verziju sajta.',
       items: [
         {
@@ -270,7 +270,7 @@ export default {
         },
         {
           title: 'Šta ako prekoračimo rok?',
-          text: 'Ako kasnim ja, popust 20% na finalnu cijenu. Ako kasnite vi (ne šaljete materijale na vrijeme), produžava se rok bez kazne, ali sajt više nije "72h".',
+          text: 'Ako kasnimo mi, popust 20% na finalnu cijenu. Ako kasnite vi (ne šaljete materijale na vrijeme), produžava se rok bez kazne, ali sajt više nije "72h".',
         },
         {
           title: 'Šta je sa SEO-om nakon 72h?',
@@ -278,7 +278,7 @@ export default {
         },
         {
           title: 'Mogu li sam mijenjati sadržaj kasnije?',
-          text: 'Ne. Sajt je custom build, nije template ni WordPress, tako da nećete moći. Za izmjene se javljate meni, možemo se dogovoriti za paket mjesečnog održavanja ili izmjene po satu.',
+          text: 'Ne. Sajt je custom build, nije template ni WordPress, tako da nećete moći. Za izmjene se javljate nama, možemo se dogovoriti za paket mjesečnog održavanja ili izmjene po satu.',
         },
         {
           title: 'Šta ako trebam sajt i na engleskom?',
@@ -286,7 +286,7 @@ export default {
         },
         {
           title: 'Da li nudite besplatnu probu / discovery?',
-          text: 'Da. 30 minuta razgovora prije nego što potpišemo bilo šta. Da vidim da li ste pravi za format, da vi vidite jesam li ja prava za vas.',
+          text: 'Da. 30 minuta razgovora prije nego što potpišemo bilo šta. Da vidimo da li ste pravi za format, da vi vidite jesmo li mi pravi za vas.',
         },
       ],
     },
