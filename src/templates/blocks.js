@@ -287,7 +287,7 @@ export const contact = ({ contact: c, endpoint = '', lang = 'sr' }) => {
         serviceChoose: 'Izaberi uslugu…',
         services: [
           'Digitalni marketing','Vođenje društvenih mreža','Marketing strategija','Marketing konsultacije',
-          'Izrada sajta','Grafički dizajn','Logo dizajn','Fotografija','Video produkcija',
+          'Izrada sajta','Sajt za 72h','Grafički dizajn','Logo dizajn','Fotografija','Video produkcija',
           'SEO optimizacija','Google oglašavanje','Brendiranje','Kurs / Obuka','Sve / nisam siguran',
         ],
         message: 'Poruka',

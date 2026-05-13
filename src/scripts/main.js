@@ -112,6 +112,15 @@
     // Vrijeme učitavanja forme — server provjerava da prošlo bar 3 sekunde
     const loadedAtField = form.elements.form_loaded_at;
     if (loadedAtField) loadedAtField.value = String(Date.now());
+
+    // Pre-fill usluga dropdown iz URL parametra (?usluga=Sajt%20za%2072h)
+    const urlParams = new URLSearchParams(window.location.search);
+    const preselectUsluga = urlParams.get('usluga');
+    if (preselectUsluga && form.elements.usluga) {
+      const opts = Array.from(form.elements.usluga.options);
+      const match = opts.find(o => o.value === preselectUsluga || o.textContent === preselectUsluga);
+      if (match) form.elements.usluga.value = match.value || match.textContent;
+    }
     // Track koje polje je posljednje fokusirano (bot često ne fokusira polja)
     const filledForField = form.elements.form_filled_for;
     form.querySelectorAll('input,select,textarea').forEach((el) => {
