@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0A0A"/>
+      <stop offset="1" stop-color="#1a1530"/>
+    </linearGradient>
+    <linearGradient id="price" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7a4eff"/>
+      <stop offset="1" stop-color="#4a23c9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cta" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f0eaff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <circle cx="950" cy="180" r="280" fill="#6e3eff" opacity="0.15"/>
+  <circle cx="120" cy="1750" r="240" fill="#6e3eff" opacity="0.12"/>
+
+  <text x="540" y="220" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="30" letter-spacing="10" fill="#B8A9FF">MM DIGITAL · PROMO</text>
+
+  <text x="540" y="450" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="108" fill="#FFFFFF">Sajt za 72h,</text>
+  <text x="540" y="580" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-style="italic" font-size="108" fill="#B8A9FF">kompletan paket.</text>
+
+  <g transform="translate(240, 760)">
+    <rect width="600" height="420" rx="32" fill="url(#price)"/>
+    <rect width="600" height="420" rx="32" fill="url(#glow)"/>
+    <text x="300" y="240" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="180" fill="#FFFFFF">799€</text>
+    <line x1="120" y1="285" x2="480" y2="285" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2"/>
+    <text x="300" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="28" letter-spacing="6" fill="#FFFFFF" fill-opacity="0.92">SVE UKLJUČENO</text>
+  </g>
+
+  <text x="540" y="1290" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="32" fill="#cfc6f5">Custom dizajn · SEO · Hosting · Domen</text>
+  <text x="540" y="1340" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="32" fill="#cfc6f5">Lektura · Stock fotografije · 30 dana podrške</text>
+
+  <text x="540" y="1450" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="24" letter-spacing="4" fill="#888">OD DOGOVORA DO LIVE VERZIJE</text>
+  <text x="540" y="1490" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="400" font-size="24" letter-spacing="4" fill="#888">ZA TRI RADNA DANA</text>
+
+  <g transform="translate(240, 1620)">
+    <rect width="600" height="100" rx="50" fill="url(#cta)"/>
+    <text x="300" y="65" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="34" fill="#0A0A0A">Rezerviši svoj slot →</text>
+  </g>
+
+  <text x="540" y="1790" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="24" letter-spacing="2" fill="#B8A9FF">mmdigital.me/sajt-za-72h</text>
+</svg>
