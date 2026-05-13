@@ -496,7 +496,42 @@ export const founder = ({ label, name, role, image, imageAlt, paragraphs = [], l
 `;
 
 // ─── Render generic — uzima niz blokova i poziva odgovarajući renderer ───
-const renderers = { hero, text, cards, values, steps, pricing, ctaSection, breadcrumb, contact, founder, clients, clientsGrid };
+// ─── Offer (paket usluge + cijena desno) ───
+// data: { label?, title?, intro?, items: [str], price: '799€', priceLabel?, priceNote?, addons?: [{label, price}], theme: 'light' }
+export const offer = ({ label, title, intro, items = [], price, priceLabel, priceNote, addons = [], theme = 'dark' }) => `
+  <section class="section ${theme === 'light' ? 'section--light' : 'section--alt'}">
+    <div class="container">
+      ${title || intro || label
+        ? `<div class="section-head reveal">
+            ${label ? `<span class="label">${inline(label)}</span>` : ''}
+            ${title ? `<h2>${inline(title)}</h2>` : ''}
+            ${intro ? `<p>${paragraph(intro)}</p>` : ''}
+          </div>`
+        : ''}
+      <div class="offer reveal">
+        <ul class="offer-items">
+          ${items.map((i) => `<li>${inline(i)}</li>`).join('')}
+        </ul>
+        <div class="offer-price">
+          <div class="offer-price-amount">${esc(price)}</div>
+          ${priceLabel ? `<p class="offer-price-label">${inline(priceLabel)}</p>` : ''}
+          ${priceNote ? `<p class="offer-price-note">${paragraph(priceNote)}</p>` : ''}
+        </div>
+      </div>
+      ${addons.length
+        ? `<div class="offer-addons reveal">
+            ${addons.map((a) => `
+              <div class="offer-addon">
+                <span>${inline(a.label)}</span>
+                <strong>${inline(a.price)}</strong>
+              </div>`).join('')}
+          </div>`
+        : ''}
+    </div>
+  </section>
+`;
+
+const renderers = { hero, text, cards, values, steps, pricing, ctaSection, breadcrumb, contact, founder, clients, clientsGrid, offer };
 
 export function renderBlocks(blocks = []) {
   return blocks

@@ -61,7 +61,7 @@ export default {
       title: 'Tri stvari koje vam *niko ne govori* o sajtu',
       paragraphs: [
         '**Konkurencija koja ima loš sajt prolazi bolje od vas koji nemate.** Zato što barem postoji. Klijent koji kuca u Google ne pita sebe "ko najbolje radi". Pita se "ko uopšte radi". Ako vas tu nema, to pitanje ste izgubili.',
-        '**Sajt koji je koštao 200€ djeluje da je koštao 200€.** Klijent to osjeti za pola sekunde. Brzina učitavanja, font, razmaci, slike, sve odaje koliko je ko ozbiljan. Loš sajt nije neutralan. Aktivno vam šteti.',
+        '**Sajt koji je koštao 200€ izgleda kao da je koštao 200€.** Klijent to osjeti za pola sekunde. Brzina učitavanja, font, razmaci, slike, sve odaje koliko je ko ozbiljan. Loš sajt nije neutralan. Aktivno vam šteti.',
         '**Najveći trošak nije izrada sajta. Najveći trošak je propuštena godina.** Svaki mjesec bez sajta je mjesec u kome konkurencija dolazi do vaših klijenata prvi. Posle godinu dana, oni su brend, vi ste alternativa.',
       ],
       align: 'left',
@@ -119,7 +119,7 @@ export default {
         {
           icon: '✎',
           title: 'Lektura i korektura',
-          text: 'Vaše tekstove čistimo gramatički, stilski i tonalno. Ako ih nemate uopšte, pišemo vam ih (do 5 stranica uračunato).',
+          text: 'Vaše tekstove čistimo gramatički, stilski i tonalno. Da svaka riječ na sajtu izgleda kao da je iz pera profesionalca.',
         },
         {
           icon: '◈',
@@ -161,17 +161,31 @@ export default {
     },
 
     {
-      type: 'pricing',
+      type: 'offer',
       theme: 'light',
       label: 'Cijena',
-      title: '*799€*. Sve gore navedeno.',
-      columns: ['', 'Detalji'],
-      rows: [
-        ['Sajt za 72h, kompletan paket (sve uključeno)', '799€'],
-        ['+ Dodatne stranice (preko 5, do 10 ukupno)', '+ 60€/stranica'],
-        ['Godišnje održavanje (od 2. godine, opcionalno)', '80€/god'],
+      title: 'Sajt za 72h, *kompletan paket*',
+      items: [
+        'Custom dizajn za vaš brend',
+        '3–5 stranica koje prodaju',
+        'Mobile-first dizajn',
+        'SEO od prvog dana',
+        'Google Analytics + Search Console',
+        'Hosting + domen + SSL, prva godina',
+        'Prevod na druge jezike',
+        'Stock fotografije',
+        'Lektura i korektura tekstova',
+        'Kontakt forma + anti-spam zaštita',
+        'Favicon + OG slike za društvene mreže',
+        '30 dana podrške nakon launcha',
       ],
-      note: 'Cijena za izradu je fiksna, ne mijenja se. Prva godina hosting + domen + SSL je uračunata. Ne plaćate ništa unaprijed, tek kada dobijete konačan sajt.',
+      price: '799€',
+      priceLabel: 'Sve uključeno',
+      priceNote: 'Cijena fiksna. Ne plaćate ništa unaprijed, tek kada dobijete konačan sajt.',
+      addons: [
+        { label: 'Dodatne stranice (preko 5, do 10 ukupno)', price: '+ 60€/stranica' },
+        { label: 'Godišnje održavanje (od 2. godine, opcionalno)', price: '80€/god' },
+      ],
     },
 
     {
