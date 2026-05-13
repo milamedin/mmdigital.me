@@ -9,7 +9,7 @@ export default {
   title: 'Sajt za 72h, profesionalan web sajt za tri radna dana | MM Digital',
   description:
     'Već mjesecima pričate da ćete napraviti sajt? Dajte nam 72 sata. Profesionalan, mobilni, optimizovan za Google. Od dogovora do live verzije za tri radna dana. Cijena fiksna, jasan obim.',
-  ogImage: '/images/og-sajt-za-72h.svg',
+  ogImage: '/images/og-sajt-za-72h.jpg',
 
   schema: [
     {

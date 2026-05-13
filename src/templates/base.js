@@ -181,7 +181,7 @@ export function renderPage(opts) {
     body,
     canonical,
     schema = [],
-    ogImage = '/images/og-default.svg',
+    ogImage = '/images/og-default.jpg',
     bodyClass = '',
     preloadImage = null,
     preloadImageMobile = null,
