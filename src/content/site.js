@@ -33,6 +33,10 @@ export const site = {
   // Dobićeš novi ID na https://analytics.google.com (počinje sa G-)
   googleAnalyticsId: 'G-J2Z17DBGXR',
 
+  // Meta (Facebook) Pixel — ostavi prazno da isključiš
+  // Dobićeš na business.facebook.com → Events Manager → Data Sources (15-16 cifara)
+  metaPixelId: '975742971509647',
+
   // Glavna navigacija
   nav: [
     { label: 'O nama', href: '/o-nama/' },

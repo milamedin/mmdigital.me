@@ -158,6 +158,8 @@
         });
         // Apps Script uglavnom vraća 200 sa JSON-om; ako ne pukne — smatraj OK
         if (!res.ok) throw new Error('Greška pri slanju (' + res.status + ')');
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_id: form.id || 'contact' });
         form.reset();
         openModal();
       } catch (err) {
