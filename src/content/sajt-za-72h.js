@@ -220,7 +220,7 @@ export default {
         },
         {
           title: 'Escape Rent a Car',
-          text: 'Rent-a-car servis, dvojezičan sajt, online rezervacije. [Pogledaj sajt →](https://escaperentacar.me/)',
+          text: 'Rent-a-car servis, višejezični sajt, online rezervacije. [Pogledaj sajt →](https://escaperentacar.me/)',
         },
       ],
       alt: true,
