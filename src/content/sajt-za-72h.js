@@ -104,7 +104,7 @@ export default {
         {
           icon: '◉',
           title: 'Hosting + domen prva godina',
-          text: 'Sve uračunato za 12 mjeseci. Hosting, domen, SSL sertifikat. Bez dodatnih troškova prve godine. Od 2. godine 80€/god ako ostajete kod nas, ili prebacujete na svoj nalog.',
+          text: 'Sve uračunato za 12 mjeseci. Hosting, SSL sertifikat, standardni domen uključen, premium domeni se doplaćuju. Bez dodatnih troškova prve godine. Od 2. godine 80€/god ako ostajete kod nas, ili prebacujete na svoj nalog.',
         },
         {
           icon: '◌',
