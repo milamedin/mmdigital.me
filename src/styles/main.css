@@ -878,9 +878,9 @@ table.pricing td:nth-child(2) { color: var(--accent); font-weight: 600; }
   margin-bottom: 14px;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.15);
 }
-.offer-price-label {
+.offer-price .offer-price-label {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.92);
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 0;
