@@ -6,9 +6,9 @@ import { site } from './site.js';
 
 export default {
   path: '/sajt-za-72h/',
-  title: 'Sajt za 72h, profesionalan web sajt za tri radna dana | MM Digital',
+  title: 'Sajt za 72h — Izrada sajta Crna Gora, 799€ | MM Digital',
   description:
-    'Već mjesecima pričate da ćete napraviti sajt? Dajte nam 72 sata. Profesionalan, mobilni, optimizovan za Google. Od dogovora do live verzije za tri radna dana. Cijena fiksna, jasan obim.',
+    'Izrada profesionalnog sajta za tri radna dana — 799€, sve uključeno. Radimo za biznise iz Podgorice, Budve, Bara, Kotora i cijele Crne Gore. Custom dizajn, hosting, domen, SEO.',
   ogImage: '/images/og-sajt-za-72h.jpg',
 
   schema: [
@@ -36,7 +36,7 @@ export default {
       label: 'Promo · Sajt za 72h',
       title: 'Već *mjesecima* pričate da ćete napraviti sajt. *Dajte nam 72 sata*.',
       subtitle:
-        'Profesionalan, mobilni, brz sajt. Od dogovora do live verzije za[br]**tri radna dana**. Bez 17 sastanaka. Bez "razmislićemo". Bez tri mjeseca čekanja na agenciju koja se ne javlja.',
+        'Profesionalna **izrada sajtova u Crnoj Gori**. Od dogovora do live verzije za[br]**tri radna dana**. Bez 17 sastanaka. Bez "razmislićemo". Bez tri mjeseca čekanja na agenciju koja se ne javlja.',
       cta: [{ label: 'Rezerviši svoj termin', href: '#kontakt' }],
       meta: 'Mjesta su limitirana. Radimo maksimum 4 ovakva sajta mjesečno. Kad se popune, to je to.',
       image: 'heroes/coding-1.jpg',
@@ -224,6 +224,17 @@ export default {
         },
       ],
       alt: true,
+    },
+
+    {
+      type: 'text',
+      label: 'Gdje radimo',
+      title: 'Izrada sajtova *širom Crne Gore*',
+      paragraphs: [
+        'Radimo online sa biznisima iz cijele Crne Gore. Cijeli proces, od discovery razgovora do launcha, završava se bez dolaska u kancelariju, preko Zoom-a i Google Drive-a. Finalni sajt vidite na linku istog dana kad kažemo "gotovo".',
+        'Najviše klijenata nam dolazi iz **Podgorice** i **Budve**, ali jednako radimo i sa biznisima iz **Bara, Kotora, Tivta, Herceg Novog, Nikšića, Berana, Bijelog Polja, Cetinja** i ostalih gradova.',
+        'Specifična niša koju često radimo, sezonski **direkt-booking sajtovi** za vlasnike apartmana i smještaja na primorju i u planinskim mjestima. Tu znate i sami da svaka sezona bez sajta znači još jedna godina booking.com provizije.',
+      ],
     },
 
     {
