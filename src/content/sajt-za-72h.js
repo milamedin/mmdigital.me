@@ -36,7 +36,7 @@ export default {
       label: 'Promo · Sajt za 72h',
       title: 'Već *mjesecima* pričate da ćete napraviti sajt. *Dajte nam 72 sata*.',
       subtitle:
-        'Profesionalna **izrada sajtova u Crnoj Gori**. Od dogovora do live verzije za[br]**tri radna dana**. Bez 17 sastanaka. Bez "razmislićemo". Bez tri mjeseca čekanja na agenciju koja se ne javlja.',
+        'Profesionalna **izrada sajtova u Crnoj Gori**. Od dogovora do live verzije za **tri radna dana**. Bez 17 sastanaka. Bez "razmislićemo". Bez tri mjeseca čekanja na agenciju koja se ne javlja.',
       cta: [{ label: 'Rezerviši svoj termin', href: '#kontakt' }],
       meta: 'Mjesta su limitirana. Radimo maksimum 4 ovakva sajta mjesečno. Kad se popune, to je to.',
       image: 'heroes/coding-1.jpg',
