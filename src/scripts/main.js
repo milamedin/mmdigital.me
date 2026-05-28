@@ -156,8 +156,13 @@
           body: params,
           headers: { 'Accept': 'application/json' },
         });
-        // Apps Script uglavnom vraća 200 sa JSON-om; ako ne pukne — smatraj OK
-        if (!res.ok) throw new Error('Greška pri slanju (' + res.status + ')');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        // Apps Script vraća 200 i za spam — parsiraj JSON da vidiš status
+        const data = await res.json().catch(() => ({ status: 'parse_error' }));
+        if (data.status !== 'ok') {
+          console.warn('[Form] submission rejected by server:', data);
+          throw new Error('Server rejected: ' + (data.reason || data.status || 'unknown'));
+        }
         if (typeof fbq === 'function') fbq('track', 'Lead');
         if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_id: form.id || 'contact' });
         form.reset();
