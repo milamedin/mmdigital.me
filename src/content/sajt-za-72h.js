@@ -28,6 +28,68 @@ export default {
         availability: 'https://schema.org/LimitedAvailability',
       },
     },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Šta ako mi se prvi dizajn ne svidi?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Uključene su dvije runde revizije u dan 2. Vraćamo se na brief, korigujemo, idemo dalje. Ako se nakon revizije i dalje ne slažemo, razilazimo se prijateljski.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Šta ako prekoračimo rok?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Ako kasnimo mi, popust 20% na finalnu cijenu. Ako kasnite vi (ne šaljete materijale na vrijeme), produžava se rok bez kazne, ali sajt više nije „72h".',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Šta je sa SEO-om nakon 72h?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Sajt je tehnički optimizovan od prvog dana. Za rangiranje na specifične ključne riječi treba kontinuirani SEO rad (od 400€/mj). To je opcionalno, dolazi nakon ovog paketa.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Mogu li sam mijenjati sadržaj kasnije?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Ne. Sajt je custom build, nije template ni WordPress, tako da nećete moći. Za izmjene se javljate nama, možemo se dogovoriti za paket mjesečnog održavanja ili izmjene po satu.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Šta ako trebam sajt i na engleskom?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Engleski (ili drugi jezik) je uračunat u cijenu. Paralelne verzije, isti dizajn, profesionalan prevod, ne Google Translate. Za 3+ jezika javite se za posebnu ponudu.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Da li nudite besplatnu probu ili discovery razgovor?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Da. 30 minuta razgovora prije nego što potpišemo bilo šta. Da vidimo da li ste pravi za format, da vi vidite jesmo li mi pravi za vas.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Koliko košta sajt u Crnoj Gori?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Naš paket „Sajt za 72h" je fiksno 799€ i sve uključeno: custom dizajn, 3-5 stranica, hosting i standardni domen prvu godinu, SSL, SEO setup, prevod na engleski, Google Analytics, kontakt forma i 30 dana podrške. Bez skrivenih troškova.',
+          },
+        },
+      ],
+    },
   ],
 
   blocks: [
@@ -261,10 +323,10 @@ export default {
         'Iskreno, neke situacije ne odgovaraju formatu 72h. Ne uzimajte ako:',
       ],
       list: [
-        '**Trebate e-commerce** sa katalogom od 20+ proizvoda. To je drugačiji projekat (3 do 6 sedmica).',
+        '**Trebate e-commerce** sa katalogom od 20+ proizvoda. To je drugačiji projekat (3 do 6 sedmica) — za to pogledajte [klasičnu izradu sajtova](/usluge/izrada-sajtova/).',
         '**Nemate ideju** šta uopšte želite. Onda vam prvo treba strategija, ne sajt.',
         '**Niste dostupni 3 dana** za odgovore na pitanja. 72h zahtijeva vašu pažnju.',
-        '**Tražite custom funkcionalnosti** (booking sistemi, plaćanja, kalendar integracije). Veći obim zahtjeva duži rok.',
+        '**Tražite custom funkcionalnosti** (booking sistemi, plaćanja, kalendar integracije). Veći obim zahtjeva duži rok — pogledajte [klasičnu izradu sajtova](/usluge/izrada-sajtova/).',
         '**Pregovarate o svakom euru**. Cijena je fiksna, ako vam je 799€ previše, ovo nije pravi paket za sad.',
       ],
       alt: true,

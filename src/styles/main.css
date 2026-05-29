@@ -740,6 +740,82 @@ strong { color: var(--white); font-weight: 600; }
 @media (max-width: 1024px) { .values--3 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) { .values, .values--3 { grid-template-columns: 1fr; } }
 
+/* ─── Testimonials (citati klijenata) ─── */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.testimonials--3 { grid-template-columns: repeat(3, 1fr); }
+.testimonial {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+.testimonial:hover { border-color: var(--accent); transform: translateY(-4px); }
+.testimonial-rating {
+  font-size: 18px;
+  color: #ffc946;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--white);
+  margin: 0;
+  quotes: "„" """;
+}
+.testimonial-quote::before { content: open-quote; color: var(--accent); margin-right: 4px; }
+.testimonial-quote::after { content: close-quote; color: var(--accent); margin-left: 2px; }
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--card-border);
+}
+.testimonial-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.testimonial-name {
+  display: block;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 15px;
+}
+.testimonial-role {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+.section--light .testimonial {
+  background: #fff;
+  border-color: #e8e3f5;
+  box-shadow: 0 4px 18px -8px rgba(110, 62, 255, 0.12);
+}
+.section--light .testimonial-quote { color: #0a0a0a; }
+.section--light .testimonial-name { color: #0a0a0a; }
+.section--light .testimonial-role { color: #4a4458; }
+.section--light .testimonial-author { border-top-color: #e8e3f5; }
+
+@media (max-width: 1024px) { .testimonials--3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .testimonials, .testimonials--3 { grid-template-columns: 1fr; } }
+
 /* ─── Proces / koraci ─── */
 .steps {
   display: grid;

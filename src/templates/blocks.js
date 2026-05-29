@@ -532,7 +532,55 @@ export const offer = ({ label, title, intro, items = [], price, priceLabel, pric
   </section>
 `;
 
-const renderers = { hero, text, cards, values, steps, pricing, ctaSection, breadcrumb, contact, founder, clients, clientsGrid, offer };
+// ─── Testimonials (citati klijenata) ───
+// data: { label?, title?, intro?, items: [{quote, author, role?, image?, rating?}], alt?, theme? }
+// Primjer:
+// {
+//   type: 'testimonials',
+//   label: 'Šta kažu klijenti',
+//   title: 'Riječ je *za njih*',
+//   items: [
+//     {
+//       quote: 'Sajt je gotov tačno za 3 dana. Klijenti me sad nalaze preko Googlea.',
+//       author: 'Marko Marković',
+//       role: 'Vlasnik restorana, Budva',
+//       rating: 5,
+//     },
+//   ],
+// }
+export const testimonials = ({ label, title, intro, items = [], alt = false, theme = 'dark' }) => `
+  <section class="section ${theme === 'light' ? 'section--light' : alt ? 'section--alt' : ''}">
+    <div class="container">
+      ${title || intro || label
+        ? `<div class="section-head reveal">
+            ${label ? `<span class="label">${inline(label)}</span>` : ''}
+            ${title ? `<h2>${inline(title)}</h2>` : ''}
+            ${intro ? `<p>${paragraph(intro)}</p>` : ''}
+          </div>`
+        : ''}
+      <div class="testimonials ${items.length === 3 ? 'testimonials--3' : items.length === 2 ? 'testimonials--2' : ''}">
+        ${items
+          .map(
+            (it, i) => `
+          <figure class="testimonial reveal" style="transition-delay:${(i % 3) * 80}ms" itemscope itemtype="https://schema.org/Review">
+            ${it.rating ? `<div class="testimonial-rating" aria-label="Ocjena ${esc(it.rating)} od 5" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating"><meta itemprop="ratingValue" content="${esc(it.rating)}"><meta itemprop="bestRating" content="5">${'★'.repeat(Number(it.rating))}${'☆'.repeat(5 - Number(it.rating))}</div>` : ''}
+            <blockquote class="testimonial-quote" itemprop="reviewBody">${paragraph(it.quote)}</blockquote>
+            <figcaption class="testimonial-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+              ${it.image ? `<img class="testimonial-img" src="${esc(it.image)}" alt="${esc(it.author)}" width="56" height="56" loading="lazy">` : ''}
+              <div>
+                <span class="testimonial-name" itemprop="name">${esc(it.author)}</span>
+                ${it.role ? `<span class="testimonial-role">${esc(it.role)}</span>` : ''}
+              </div>
+            </figcaption>
+          </figure>`
+          )
+          .join('')}
+      </div>
+    </div>
+  </section>
+`;
+
+const renderers = { hero, text, cards, values, steps, pricing, ctaSection, breadcrumb, contact, founder, clients, clientsGrid, offer, testimonials };
 
 export function renderBlocks(blocks = []) {
   return blocks
