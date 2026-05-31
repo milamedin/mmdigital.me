@@ -2,6 +2,21 @@
   command = "node build.mjs"
   publish = "dist"
 
+# ─── 301 redirects ───
+# Stari blog post "Koliko košta web sajt" obrisan, preusmjeren na Sajt za 72h
+# Bio rangiran #1 za "koliko košta sajt", sad ide na ad landing.
+[[redirects]]
+  from = "/blog/koliko-kosta-web-sajt/"
+  to = "/sajt-za-72h/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/koliko-kosta-web-sajt"
+  to = "/sajt-za-72h/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

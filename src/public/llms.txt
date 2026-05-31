@@ -37,7 +37,6 @@ Sjedište: Petrovac na Moru, Crna Gora. Osnivačica i izvršna direktorica: Mila
 - [Blog](https://mmdigital.me/blog/): Praktični tekstovi o marketingu i sajtovima.
 - [Šta je digitalni marketing](https://mmdigital.me/blog/sta-je-digitalni-marketing/): Bez stručnog žargona, za vlasnike biznisa.
 - [Šta je SEO optimizacija](https://mmdigital.me/blog/sta-je-seo-optimizacija/): Kako Google rangira sajtove i koliko traje.
-- [Koliko košta web sajt](https://mmdigital.me/blog/koliko-kosta-web-sajt/): Iskreni vodič o cijenama u Crnoj Gori.
 - [Kurs digitalnog marketinga, vrijedi ili ne](https://mmdigital.me/blog/kurs-digitalnog-marketinga/): Kako birati kurs i kome treba.
 - [Brendiranje izloga](https://mmdigital.me/blog/brendiranje-izloga-vodic/): Kako pretvoriti izlog u 24/7 oglas.
 - [Vizit karte vodič](https://mmdigital.me/blog/vizit-karte-dizajn-vodic/): Dizajn vizit karti koji se ne baca.
