@@ -67,6 +67,7 @@ export default {
       cols: 2,
       cards: [
         { icon: '◧', title: 'Izrada sajtova', text: 'Brzi, mobilni, SEO-optimizovani sajtovi koji konvertuju.', href: '/usluge/izrada-sajtova/' },
+        { icon: '⚡', title: 'Sajt za 72h', text: 'Gotov profesionalan sajt za 3 radna dana. Fiksno 799€, sve uključeno.', href: '/sajt-za-72h/' },
         { icon: '⌖', title: 'SEO optimizacija', text: 'Da vas Google nađe prije konkurencije. Organske posjete koje rastu.', href: '/usluge/seo-optimizacija/' },
         { icon: 'G', title: 'Google oglašavanje', text: 'Google Ads kampanje. Ljudi koji aktivno traže baš vas.', href: '/usluge/google-oglasavanje/' },
       ],
