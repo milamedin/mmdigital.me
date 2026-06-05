@@ -183,8 +183,13 @@ async function build() {
   };
   const EN_TO_SR = Object.fromEntries(Object.entries(SR_TO_EN).map(([k, v]) => [v, k]));
   // Postavi alternate ako stranica nema svoj
+  const pageExists = (p) => pages.some((x) => x.path === p);
   for (const page of pages) {
-    if (page.alternate) continue;
+    if (page.alternate) {
+      // Ne reklamiraj hreflang ka stranici koja ne postoji (parcijalni EN rollout)
+      if (!pageExists(page.alternate)) page.alternate = null;
+      continue;
+    }
     if (page.path.startsWith('/en/')) {
       const srPath = EN_TO_SR[page.path];
       if (srPath && pages.some((p) => p.path === srPath)) page.alternate = srPath;
