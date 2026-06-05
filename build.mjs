@@ -132,6 +132,11 @@ async function build() {
   const js = await fs.readFile(path.join(SRC, 'scripts', 'main.js'), 'utf8');
   await fs.writeFile(path.join(DIST, 'assets', 'main.js'), minifyJs(js), 'utf8');
 
+  // fonts.css dolazi iz public/ nekompresovan — minifikuj na licu mjesta
+  const fontsCssPath = path.join(DIST, 'assets', 'fonts', 'fonts.css');
+  const fontsCss = await fs.readFile(fontsCssPath, 'utf8').catch(() => null);
+  if (fontsCss) await fs.writeFile(fontsCssPath, minifyCss(fontsCss), 'utf8');
+
   // Discover and render pages
   console.log('▶ Učitavam content/');
   const files = await walkContent(CONTENT);
@@ -268,7 +273,7 @@ async function build() {
     });
     const outDir = page.path === '/' ? DIST : path.join(DIST, page.path);
     await ensure(outDir);
-    await fs.writeFile(path.join(outDir, 'index.html'), html, 'utf8');
+    await fs.writeFile(path.join(outDir, 'index.html'), minifyInlineAssets(html), 'utf8');
     console.log(`  ✓ ${page.path}`);
   }
 
@@ -289,7 +294,7 @@ async function build() {
       </section>
     `,
   });
-  await fs.writeFile(path.join(DIST, '404.html'), html404, 'utf8');
+  await fs.writeFile(path.join(DIST, '404.html'), minifyInlineAssets(html404), 'utf8');
   console.log('  ✓ /404.html');
 
   // EN 404
@@ -310,7 +315,7 @@ async function build() {
     `,
   });
   await ensure(path.join(DIST, 'en'));
-  await fs.writeFile(path.join(DIST, 'en', '404.html'), html404En, 'utf8');
+  await fs.writeFile(path.join(DIST, 'en', '404.html'), minifyInlineAssets(html404En), 'utf8');
   console.log('  ✓ /en/404.html');
 
   // Sitemap (preskačemo noindex stranice)
@@ -467,6 +472,19 @@ function minifyJs(src) {
     }
   }
   return result;
+}
+
+// Minifikuje inline <style> i <script> blokove u gotovom HTML-u.
+// Preskače eksterne (src=) i JSON-LD (već kompaktan iz JSON.stringify).
+function minifyInlineAssets(html) {
+  return html
+    .replace(/<style\b([^>]*)>([\s\S]*?)<\/style>/gi, (m, attrs, css) =>
+      `<style${attrs}>${minifyCss(css)}</style>`)
+    .replace(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi, (m, attrs, js) => {
+      if (/\bsrc\s*=/i.test(attrs)) return m;
+      if (/type\s*=\s*["']application\/ld\+json["']/i.test(attrs)) return m;
+      return `<script${attrs}>${minifyJs(js)}</script>`;
+    });
 }
 
 // ─── Klijenti / portfolio helpers ─────────────────────────
