@@ -2,9 +2,9 @@ import { site } from '../site.js';
 
 export default {
   path: '/usluge/fotografija/',
-  title: 'Fotograf Podgorica & Budva | Foto Studio | MM Digital',
+  title: 'Fotograf Crna Gora | Profesionalna Fotografija | MM Digital',
   description:
-    'Profesionalna fotografija u Podgorici i Budvi. Poslovne fotografije, produkti, food, ambijent, tim. MM Digital, slike koje prodaju.',
+    'Profesionalni fotograf u Crnoj Gori — Podgorica, Budva, Bar i primorje. Product, food, ambijent, poslovni portreti. Slike koje prodaju, ne samo lijepo izgledaju.',
 
   schema: [
     {
@@ -13,15 +13,17 @@ export default {
       serviceType: 'Profesionalna fotografija',
       provider: { '@type': 'Organization', name: 'MM Digital', url: site.url },
       areaServed: [
+        { '@type': 'Country', name: 'Montenegro' },
         { '@type': 'City', name: 'Podgorica' },
         { '@type': 'City', name: 'Budva' },
-        { '@type': 'City', name: 'Petrovac' },
+        { '@type': 'City', name: 'Bar' },
         { '@type': 'City', name: 'Kotor' },
         { '@type': 'City', name: 'Tivat' },
+        { '@type': 'City', name: 'Petrovac' },
       ],
-      name: 'Foto studio, MM Digital',
+      name: 'Profesionalna fotografija, MM Digital',
       description:
-        'Product, food, ambijent, poslovne portrete, event i hotelska fotografija u Podgorici, Budvi i na crnogorskom primorju.',
+        'Product, food, ambijent, poslovne portrete, event i hotelska fotografija širom Crne Gore — Podgorica, Budva, Bar i cijelo primorje.',
       url: `${site.url}/usluge/fotografija/`,
     },
   ],
@@ -30,12 +32,11 @@ export default {
     {
       type: 'hero',
       label: 'Usluga · Fotografija',
-      title: 'Slike koje *prodaju*, ne samo koje lijepo izgledaju.',
+      title: 'Fotograf u *Crnoj Gori*. Slike koje prodaju.',
       subtitle:
-        'Poslovne fotografije, produkti, food, ambijent, tim. Profesionalne slike koje pretvaraju posjetioce u klijente.',
+        'Poslovne fotografije, produkti, food, ambijent, tim. Radimo u Podgorici, Budvi, Baru i na cijelom primorju. Profesionalne slike koje pretvaraju posjetioce u klijente.',
       cta: [{ label: 'Zakaži snimanje' }],
-      image: 'heroes/fotografija-1.jpg',
-      imageAlt: 'Profesionalni foto studio sa kamerom i osvjetljenjem',
+      visualText: 'Crna Gora',
     },
 
     {
@@ -51,28 +52,20 @@ export default {
     },
 
     {
-      type: 'text',
-      label: 'Podgorica',
-      title: 'Foto studio *Podgorica*, profesionalna fotografija za vaš biznis',
-      paragraphs: [
-        'Naš foto studio u Podgorici je opremljen za sve vrste poslovne fotografije. Product shots, poslovni portreti, food fotografija, ambijent, sve na jednom mjestu.',
-        'Ali ne radimo samo u studiju. **Dolazimo kod vas.** Jer vaš prostor, vaš tim, vaši proizvodi, izgledaju najbolje u svom prirodnom okruženju.',
+      type: 'cards',
+      theme: 'light',
+      label: 'Gdje radimo',
+      title: 'Fotograf u *vašem gradu*',
+      cols: 3,
+      cards: [
+        { icon: '◉', title: 'Fotograf Podgorica', text: 'Snimamo na lokaciji vašeg biznisa u glavnom gradu. Product, korporativni portreti, food, ambijent.', href: '/usluge/fotografija/podgorica/' },
+        { icon: '☀', title: 'Fotograf Budva', text: 'Hotelska, ugostiteljska i sezonska fotografija na primorju. Materijal za cijelu sezonu iz jedne sesije.', href: '/usluge/fotografija/budva/' },
+        { icon: '⚓', title: 'Fotograf Bar', text: 'Poslovna i produktna fotografija u Baru i okolini. Manja konkurencija, vi se istaknete prvi.', href: '/usluge/fotografija/bar/' },
       ],
-    },
-
-    {
-      type: 'text',
-      label: 'Budva i primorje',
-      title: 'Fotograf *Budva*, sezonska i turistička fotografija',
-      paragraphs: [
-        'Budva, Kotor, Tivat, Bar, Petrovac, crnogorsko primorje je pozornica za vaš biznis. Radimo sezonska snimanja kada je svjetlo najbolje i kada su vaši prostori puni života. **Jedna sesija = materijal za cijelu sezonu.**',
-      ],
-      alt: true,
     },
 
     {
       type: 'cards',
-      theme: 'light',
       label: 'Šta fotografišemo',
       title: 'Naše usluge *fotografije*',
       cols: 3,
@@ -92,7 +85,7 @@ export default {
       title: 'Fotograf pravi lijepe slike. Mi pravimo slike koje *prodaju*.',
       paragraphs: [
         'Razlika? Mi razmišljamo o tome kako će ta slika izgledati na Instagramu, na Google-u, na sajtu. Koji format za koji kanal. Koja slika će natjerati nekoga da klikne, pozove, kupi.',
-        '**Jer mi nismo samo fotografi. Mi smo marketeri koji znaju da fotografišu.**',
+        '**Jer mi nismo samo fotografi. Mi smo marketeri koji znaju da fotografišu.** Trebate i da te slike negdje žive? Radimo [izradu sajtova](/usluge/izrada-sajtova/) i [vođenje društvenih mreža](/usluge/vodjenje-mreza/) — slike i kanal iz iste ruke.',
       ],
     },
 
