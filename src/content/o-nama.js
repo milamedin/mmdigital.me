@@ -80,9 +80,12 @@ export default {
       imageAlt: 'Mila Medin, osnivačica i izvršna direktorica MM Digital',
       paragraphs: [
         '**Mila Medin** je osnivačica i izvršna direktorica MM Digital Creative Agency. Diplomirala je Informacione sisteme i tehnologije na **Fakultetu organizacionih nauka (FON)** Univerziteta u Beogradu. Taj spoj tehničkog razumijevanja i godina rada u kreativnoj industriji odredio je ono što agencija danas jeste.',
-        'Vodi tim koji ne pravi *"lijepe stvari"*. Pravi stvari koje rade. Strategiju koja se mjeri u klijentima, sajtove koji prodaju i sadržaj koji se pamti. Ne zato što "tako rade i drugi", nego zato što je to ono što vašem biznisu zaista treba.',
+        'Od 2020. potpisala je identitete i kampanje za **više od 20 brendova** — od **Dukley Hotel & Resorta** i **HG Budvanske rivijere** do brendova izgrađenih od prve skice, poput **Ruštulato** gelaterije. Njeni bilbordi za **Hotel Huma** plasirani su i van granica Crne Gore, a dizajnirala je i štand za Sajam turizma u Beogradu.',
+        'Van agencije, organizatorka je **Creative Fest Montenegro** — međunarodnog festivala kulture, umjetnosti i kreativnih industrija u Petrovcu, podržanog od Ministarstva kulture i medija Crne Gore.',
+        'Vodi tim koji ne pravi *"lijepe stvari"*. Pravi stvari koje rade. Strategiju koja se mjeri u klijentima, sajtove koji prodaju i sadržaj koji se pamti.',
       ],
       links: [
+        { label: 'Pogledaj radove', href: '/klijenti/' },
         { label: 'Instagram', href: site.contact.instagramUrl, external: true },
         { label: 'Email', href: `mailto:${site.contact.email}` },
       ],

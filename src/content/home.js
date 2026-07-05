@@ -7,7 +7,7 @@ export default {
   path: '/',
   title: 'MM Digital, Marketing Agencija Crna Gora | Full-Service Digitalni Marketing',
   description:
-    'Full-service marketing agencija u Crnoj Gori. Digitalni marketing, izrada sajtova, grafički dizajn, fotografija, video, SEO. Za biznise koji znaju šta rade, i trebaju da budu viđeni.',
+    'Full-service marketing agencija u Crnoj Gori. Iza nas 20+ brendova: Dukley, Sumosan, Mogren, Hotel Huma... Digitalni marketing, sajtovi, dizajn, foto, video, SEO.',
 
   schema: [
     {
@@ -64,7 +64,7 @@ export default {
       label: 'MM Digital · Marketing agencija Crna Gora',
       title: 'Vaš biznis radi posao. Mi radimo da to svi *vide*.',
       subtitle:
-        'Full-service marketing agencija u Crnoj Gori. Za biznise koji znaju šta rade, ali im treba neko ko zna kako da to pokaže svijetu.',
+        'Full-service marketing agencija u Crnoj Gori. Iza nas je 20+ brendova — od hotelskih grupa i resorta do restorana, salona i butika. Za biznise koji znaju šta rade, ali im treba neko ko zna kako da to pokaže svijetu.',
       cta: [
         { label: 'Razgovarajmo', href: '/kontakt/' },
         { label: 'Pogledaj usluge', href: '/usluge/' },
@@ -173,11 +173,35 @@ export default {
       type: 'clients',
       auto: true,
       label: 'Saradnici i klijenti',
-      title: 'Brendovi koji su nam *ukazali povjerenje*.',
+      title: 'Radove potpisujemo *imenom*.',
       intro:
-        'Hoteli, restorani, lokalna samouprava, butici, agencije, birali su nas zato što smo isporučili rezultate. [Pogledaj sve →](/klijenti/)',
+        '**Dukley Hotel & Resort. Sumosan. Mogren. Hotel Huma. HG Budvanska rivijera. Ruštulato.** Bilbordi koji su prešli granice Crne Gore, brendovi izgrađeni od prve skice i kampanje koje pune sezone. [Pogledaj radove →](/klijenti/)',
       split: true,
       speed: 100,
+    },
+
+    {
+      type: 'values',
+      label: 'Brojevi, ne priče',
+      title: 'Dokaz se *mjeri*.',
+      items: [
+        {
+          title: '20+ brendova.',
+          text: 'Od hotelskih grupa (HG Budvanska rivijera) i resorta (Dukley) do restorana, barova, salona i butika. Radovi koje možete vidjeti, dodirnuti i posjetiti.',
+        },
+        {
+          title: '+60% rezervacija za 3 mjeseca.',
+          text: 'Kozmetički salon u Podgorici: mjerenje, popravljen landing, lokalni oglasi od 5€/dan i sadržaj koji odgovara na prava pitanja. Bez povećanja budžeta.',
+        },
+        {
+          title: 'Bilbordi van granica.',
+          text: 'Kampanje za Hotel Huma plasirane internacionalno. Dizajn štanda za Sajam turizma u Beogradu. Radimo lokalno — vidimo se regionalno.',
+        },
+        {
+          title: 'Od 2020. Iz Crne Gore.',
+          text: 'Brend koji se doživljava svim čulima — od logoa sa zlatotiskom do menija, uniformi i kampanja. Zanat koji se ne uči preko noći.',
+        },
+      ],
     },
 
     {
@@ -199,8 +223,8 @@ export default {
           text: 'Dizajn, sajt, fotografije, video, mreže, oglasi, SEO, jedan tim koji sve radi usklađeno. Nema "to nije naš dio" ili "pitajte drugog freelancera". Sve je naše. I sve se uklapa.',
         },
         {
-          title: 'Nismo savršeni. Ali smo iskreni.',
-          text: 'Nećemo vam obećati "garantovane rezultate" ili "prvu poziciju na Google-u za 7 dana". Reći ćemo vam šta je realno, koliko traje i koliko košta. Bez iznenađenja.',
+          title: 'Radove potpisujemo imenom.',
+          text: 'Dukley, Sumosan, Mogren, Hotel Huma — ne krijemo za koga radimo, jer je rad naš najbolji argument. Nećemo vam obećati čuda za 7 dana. Reći ćemo vam šta je realno, koliko traje i koliko košta.',
         },
       ],
       alt: true,
@@ -212,10 +236,28 @@ export default {
       title: 'Radimo s biznisima koji *ozbiljno misle*.',
       paragraphs: [
         'Ne s veličinom, nego s namjerom.',
-        'Radili smo s restoranima koji imaju 10 stolova i hotelima koji imaju 100 soba. S butik brendovima koji tek počinju i firmama koje postoje 20 godina. S advokatskim kancelarijama, kozmetičkim salonima, IT kompanijama, građevinskim firmama, turističkim agencijama.',
+        'Radili smo s restoranima koji imaju 10 stolova i hotelskim grupama sa stotinama soba. S gelaterijom kojoj smo nacrtali brend od prve skice i resortima koji ugošćavaju svjetsku klijentelu. S advokatskim kancelarijama, kozmetičkim salonima, IT kompanijama, građevinskim firmama, turističkim agencijama.',
         'Zajedničko im je jedno: znaju da rade dobar posao. **I žele da to vidi ostatak svijeta.**',
         'Ako ste vi takvi, [razgovarajmo](/kontakt/).',
       ],
+    },
+
+    {
+      type: 'founder',
+      label: 'Ko stoji iza radova',
+      name: 'Mila Medin',
+      role: 'Osnivačica i izvršna direktorica',
+      image: 'team/mila-medin.jpg',
+      imageAlt: 'Mila Medin, osnivačica MM Digital',
+      paragraphs: [
+        'MM Digital nije bezlična agencija — iza svakog rada stoji **Mila Medin**: diplomirana inženjerka Informacionih sistema i tehnologija (**FON, Univerzitet u Beogradu**), grafička dizajnerka, web developerka i fotografkinja.',
+        'Autorka identiteta za 20+ brendova — od Dukley resorta do Ruštulato gelaterije — i organizatorka **Creative Fest Montenegro**, međunarodnog festivala kreativnih industrija. Kad radite s nama, radite s osobom koja potpisuje rad. Ne sa "timom za korisničku podršku".',
+      ],
+      links: [
+        { label: 'Upoznaj Milu', href: '/o-nama/' },
+        { label: 'Instagram', href: site.contact.instagramUrl, external: true },
+      ],
+      alt: true,
     },
 
     {

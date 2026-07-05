@@ -27,12 +27,13 @@ export default {
       title: '*Web sajtovi*',
       columns: ['Tip sajta', 'Cijena', 'Šta je uključeno'],
       rows: [
+        ['**Sajt za 72h** ⚡', '**799€ fiksno**', '3–5 stranica za 3 radna dana. Hosting + domen + SSL prvu godinu, SEO setup, EN prevod, analitika, anti-spam forma, 30 dana podrške'],
         ['Landing page', 'od 500€', '1 stranica, CTA, kontakt forma, mobile, SEO osnove'],
         ['Poslovni sajt', 'od 1.200€', '5–8 stranica, SEO, responsive, CMS po potrebi'],
         ['E-commerce', 'od 2.500€', 'Online prodavnica, plaćanje, upravljanje narudžbama'],
         ['Custom projekat', 'po dogovoru', 'Sve što vam treba, definisano u discovery fazi'],
       ],
-      note: 'Standardno traje 4 sedmice. E-commerce i veći projekti 6–10 sedmica.',
+      note: 'Sajt za 72h: fiksna cijena, limit 4 mjesečno. Poslovni sajtovi standardno 4 sedmice, e-commerce i veći projekti 6–10 sedmica.',
     },
 
     {
@@ -104,6 +105,7 @@ export default {
       rows: [
         ['Logo dizajn', 'od 350€', '3 koncepta, finalne datoteke, brand guidelines'],
         ['Vizuelni identitet (kompletan)', 'od 800€', 'Logo + boje + fontovi + brand book + 5 aplikacija'],
+        ['**Premium brend paket** ✦', 'od 1.800€', 'Brend od nule, sve iz jedne ruke: logo, custom ilustracije, ambalaža/meni, uniforme, signage + foto i video produkcija (kao Ruštulato)'],
         ['Vizit karte', 'od 80€', 'Dizajn + priprema za štampu (štampa zasebno)'],
         ['Flajer / brošura', 'od 120€', 'Jednostrana ili dvostrana, A6–A4'],
         ['Meni dizajn', 'od 200€', 'Restorani, kafići, do 4 strane'],
@@ -144,6 +146,27 @@ export default {
         ['Korporativni / event video', 'od 800€', 'Cijeli dan, više kamera, montaža'],
         ['Testimonijal video', 'od 300€/po klijentu', 'Snimanje + montaža, do 2 minuta'],
       ],
+    },
+
+    {
+      type: 'pricing',
+      label: 'Sve pod jednim krovom',
+      title: '*Mjesečni paketi*, kompletan marketing',
+      intro:
+        'Za biznise koji žele jednog partnera za sve — strategiju, sadržaj, oglase i produkciju. Jedan tim, jedan poziv, jedan izvještaj.',
+      columns: ['', 'Prisustvo', 'Rast', 'Partner'],
+      rows: [
+        ['Cijena', 'od 550€/mj', 'od 950€/mj', 'od 1.500€/mj'],
+        ['Za koga', 'Biznis koji hoće urednu prisutnost', 'Biznis koji aktivno raste', 'Biznis kojem smo marketing odjeljenje'],
+        ['Društvene mreže', '1 platforma, 12 objava', '2 platforme, 20 objava + Reels', '3+ platforme, dnevni sadržaj'],
+        ['Oglašavanje', '—', 'Google ili Meta kampanje', 'Google + Meta + remarketing'],
+        ['Foto/video', '—', '1 snimanje mjesečno', '2 snimanja mjesečno'],
+        ['Dizajn materijala', 'Osnovni (objave)', '+ promo materijali', 'Neograničeno u razumnom obimu'],
+        ['SEO', '—', 'Osnovni on-page', 'Kompletan mjesečni SEO'],
+        ['Strategija i konsultacije', 'Kvartalni pregled', 'Mjesečna sesija', 'Stalno dostupan tim'],
+        ['Izvještavanje', 'Mjesečno', 'Mjesečno + preporuke', 'Sedmični pregled + mjesečni izvještaj'],
+      ],
+      note: 'Budžeti za oglase plaćaju se zasebno. Tromjesečna početna obaveza, zatim mjesec dana otkaza.',
     },
 
     {
