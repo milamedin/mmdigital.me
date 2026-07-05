@@ -156,6 +156,12 @@ strong { color: var(--white); font-weight: 600; }
 
 .section--light .prose ul li { color: #4a4458; }
 .section--light .prose ul li::before { background: #6e3eff; }
+/* .prose p / p strong / p a globalna pravila (dark) imaju istu specifičnost kao
+   .section--light p*, ali dolaze kasnije — pa gaze light boje. Ova .prose-scoped
+   pravila (2 klase) ih nadjačavaju specifičnošću da tekst na svijetloj bude taman. */
+.section--light .prose p { color: #4a4458; }
+.section--light .prose p strong { color: #0a0a0a; }
+.section--light .prose p a { color: #6e3eff; }
 
 /* Kartice na svijetloj pozadini */
 .section--light .card,
@@ -202,6 +208,8 @@ strong { color: var(--white); font-weight: 600; }
 }
 .section--light table.pricing td:first-child { color: #0a0a0a; }
 .section--light table.pricing td:nth-child(2) { color: #6e3eff; }
+/* bold u ćeliji nasljeđuje boju kolone (globalni strong{white} bi bio nevidljiv na svijetloj) */
+.section--light table.pricing td strong { color: inherit; }
 
 /* Selection na svijetloj */
 .section--light ::selection { background: #6e3eff; color: #fff; }
