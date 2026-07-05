@@ -772,7 +772,7 @@ strong { color: var(--white); font-weight: 600; }
   line-height: 1.5;
   color: var(--white);
   margin: 0;
-  quotes: "„" """;
+  quotes: "\201E" "\201C";
 }
 .testimonial-quote::before { content: open-quote; color: var(--accent); margin-right: 4px; }
 .testimonial-quote::after { content: close-quote; color: var(--accent); margin-left: 2px; }
