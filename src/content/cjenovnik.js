@@ -27,13 +27,12 @@ export default {
       title: '*Web sajtovi*',
       columns: ['Tip sajta', 'Cijena', 'Šta je uključeno'],
       rows: [
-        ['**Sajt za 72h** ⚡', '**799€ fiksno**', '3–5 stranica za 3 radna dana. Hosting + domen + SSL prvu godinu, SEO setup, EN prevod, analitika, anti-spam forma, 30 dana podrške'],
         ['Landing page', 'od 500€', '1 stranica, CTA, kontakt forma, mobile, SEO osnove'],
         ['Poslovni sajt', 'od 1.200€', '5–8 stranica, SEO, responsive, CMS po potrebi'],
         ['E-commerce', 'od 2.500€', 'Online prodavnica, plaćanje, upravljanje narudžbama'],
         ['Custom projekat', 'po dogovoru', 'Sve što vam treba, definisano u discovery fazi'],
       ],
-      note: 'Sajt za 72h: fiksna cijena, limit 4 mjesečno. Poslovni sajtovi standardno 4 sedmice, e-commerce i veći projekti 6–10 sedmica.',
+      note: 'Poslovni sajtovi standardno traju 4 sedmice. E-commerce i veći projekti 6–10 sedmica.',
     },
 
     {

@@ -118,18 +118,6 @@ export default {
     },
 
     {
-      type: 'text',
-      label: 'Brza opcija',
-      title: 'Treba vam sajt *brzo*? Imamo poseban paket.',
-      paragraphs: [
-        'Za biznise koji trebaju profesionalan sajt **što prije**, imamo paket [Sajt za 72h](/sajt-za-72h/) — kompletan paket sa fiksnom cijenom od 799€, od dogovora do live verzije za tri radna dana.',
-        'Custom dizajn (ne template), 3–5 stranica, hosting i standardni domen prvu godinu, SEO setup, prevod na engleski, 30 dana podrške. Sve uključeno, bez skrivenih troškova.',
-        '[Pogledajte detalje paketa →](/sajt-za-72h/)',
-      ],
-      alt: true,
-    },
-
-    {
       type: 'steps',
       label: 'Proces',
       title: 'Naš proces *izrade sajta*',

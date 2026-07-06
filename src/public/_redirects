@@ -7,9 +7,10 @@
 # Primjer: /old-url/  /new-url/  301
 # Po potrebi dodaj svoje redirect-e ispod ovog komentara.
 
-# Obrisan blog post "Koliko košta web sajt" → Sajt za 72h (čuva ranking equity)
-/blog/koliko-kosta-web-sajt/   /sajt-za-72h/   301
-/blog/koliko-kosta-web-sajt    /sajt-za-72h/   301
+# Obrisan blog post "Koliko košta web sajt" → izrada sajtova (trajna, indeksirana
+# stranica; ranije je vodio na /sajt-za-72h/ koji je sad noindex privatna landing)
+/blog/koliko-kosta-web-sajt/   /usluge/izrada-sajtova/   301
+/blog/koliko-kosta-web-sajt    /usluge/izrada-sajtova/   301
 
 # Cloudflare automatski koristi /404.html za sve nepoznate rute,
 # pa nije potreban eksplicitan fallback.

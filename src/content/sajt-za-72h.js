@@ -10,6 +10,7 @@ export default {
   description:
     'Izrada profesionalnog sajta za tri radna dana — 799€, sve uključeno. Radimo za biznise iz Podgorice, Budve, Bara, Kotora i cijele Crne Gore. Custom dizajn, hosting, domen, SEO.',
   ogImage: '/images/og-sajt-za-72h.jpg',
+  noindex: true, // Privatna promo landing — nije dio stalne ponude. Direktan link i Google Ads i dalje rade; van sitemap-a i Google pretrage.
 
   schema: [
     {
